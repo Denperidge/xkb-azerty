@@ -37,12 +37,16 @@ if __name__ == "__main__":
         if symbol_file.is_dir():
             continue
         
-        regex = ""
+        regex = "name\[Group\d*?\]=\"(?P<name>.*?)\"(\n|.)*?"
         for keycode in AZERTY_DETECTORS:
             expected = AZERTY_DETECTORS[keycode]
-            regex += f".*?{keycode}.*?({expected.lower()}|{expected.upper()})\,.*?\\n"
-        
-        #findall()
-        
+            regex += f".*?{keycode}.*?({expected.lower()}|{expected.upper()}),.*?\\n"
+                
         content = symbol_file.read_text("UTF-8")
-        #print(content)
+        matches = findall(regex, content)
+        if len(matches) > 0:
+            print(f"Detected Azerty: {matches[0][0]} (path: {symbol_file})")
+            print("-----")
+        elif "azerty" in content.lower():
+            print(f"Didn't detect Azerty using regex, but the file contains the string 'azerty'. Is the Regex failing? (Path: {symbol_file})")
+            print("-----")

@@ -19,13 +19,26 @@ REGEX_ENTRY_KEYS = r'key <(?P<keycode>.*?)>\s*?{\s*?\[\s*?(?P<keys>.*?)\s*]'
 
 # These are not detected by the regex method, but instead manually added
 AZERTY_STYLE_LAYOUTS = [
-    "ara"  # ara(azerty) & ara(azerty_digits)
+    # Non-alphabet characters
+    "ara(azerty)",
+    "ara(azerty_digits)",
+    "sun_vndr/ara(azerty)",
+    "sun_vndr/ara(azerty_digits)",
+    "fr(geo)",
+    "sun_vndr/fr(geo)",
+    "ru(phonetic_azerty)",
+    "gn",
+    "gn(basic)",
+    # Uses ara(azerty)
+    "dz(ar)",
+    "ma",
+    "ma(arabic)",
 ]
 
 AZERTY_DETECTORS = {
     "AD01": "a",
     "AD02": "z",
-    "AD03": "e"
+    #"AD03": "e"  TODO: needed?
 }
 
 def clone_or_pull_repo(repo=UPSTREAM, dirname=DIR_XKEYBOARD_CONFIG):
@@ -94,6 +107,7 @@ if __name__ == "__main__":
 
     processed_all = dict()
     processed_azerty = dict()
+    processed_azerty_style = dict()
 
     """Step 2:
         - Iterate over all symbol contents
@@ -147,15 +161,19 @@ if __name__ == "__main__":
         if is_azerty:
             print("Is Azerty!")
             processed_azerty[symbol_id] = entry
-        #elif "azerty" in symbol_content_included.lower():
-        #    raise NotImplementedError("Azerty not detected, but 'azerty' was detected in symbol content")
+        elif symbol_id in AZERTY_STYLE_LAYOUTS:
+            print(f"Hardcoded azerty style layout ({symbol_id})")
+            processed_azerty_style[symbol_id] = entry
+        elif "azerty" in symbol_content_included.lower():
+            raise NotImplementedError(f"Azerty not detected, but 'azerty' was detected in symbol content ({symbol_id})")
 
     """Step 3:
         - Save processed data into json files
     """
     for output in [
         ["all", processed_all],
-        ["azerty", processed_azerty]
+        ["azerty", processed_azerty],
+        ["azerty-style", processed_azerty_style]
     ]:
         DIR_DATA.joinpath(f"{output[0]}.min.json").write_text(dumps(output[1]))
         DIR_DATA.joinpath(f"{output[0]}.json").write_text(dumps(output[1], indent=4))

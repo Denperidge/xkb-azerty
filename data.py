@@ -18,6 +18,7 @@ REGEX_SYMBOLS_ENTRY_ONE_LINE = r'(?P<default>default)?.*?($\n^)?xkb_symbols.*?"(
 REGEX_ENTRY_INCLUDES = r'include "(?P<include>.*?)"'
 REGEX_ENTRY_NAME = r'name\[Group\d*?\] *?= *?"(?P<name>.*?)";'
 REGEX_ENTRY_KEYS = r'key <(?P<keycode>.*?)>\s*?{\s*?\[\s*?(?P<keys>.*?)\s*]'
+REGEX_ENTRY_ID_FIND_LANGUAGE = r'^(.*?/)?(?P<language>[^\n\(]*)'
 
 # These are not detected by the regex method, but instead manually added
 AZERTY_STYLE_LAYOUTS = [
@@ -45,6 +46,7 @@ AZERTY_DETECTORS = {
 
 MARKDOWN_PREFIX = """### AZERTY
 When using Niri with an AZERTY keyboard layout, the default workspace keybinds (or any keybinds using numbers) will not work as intended.
+
 """
 
 
@@ -192,6 +194,7 @@ if __name__ == "__main__":
     """
     all_azerty = {**processed_azerty, **processed_azerty_style}
     azerty_numerics = dict()
+    language_row_styles = dict()
     for entry_id in all_azerty:
         entry = all_azerty[entry_id]
         print(f"Processing entry {entry['id']}")
@@ -212,7 +215,20 @@ if __name__ == "__main__":
         if row_style not in azerty_numerics:
             azerty_numerics[row_style] = list()
         azerty_numerics[row_style].append(out)
-    
+        
+        language = match(REGEX_ENTRY_ID_FIND_LANGUAGE, out["id"]).group("language")
+        
+        if language not in language_row_styles.keys():
+            language_row_styles[language] = set()
+        language_row_styles[language].add(row_style)
+    #language_row_style_counts = dict()
+    #language_counts = dict()
+    #for language in language_row_styles:
+    #    language_row_style_counts[language] = len(language_row_styles[language])
+    #    if language not in language_counts:
+    #        language_counts[language] = 0
+    #    language_counts[language] += 1
+
     markdown_output = MARKDOWN_PREFIX
     for row_style in azerty_numerics:
         row_style_entries = azerty_numerics[row_style]

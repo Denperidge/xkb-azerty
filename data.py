@@ -13,7 +13,7 @@ DIR_DATA = Path("data/")
 #REGEX_SYMBOLS_ENTRY = r'(?P<default>default)?.*?$\n^xkb_symbols.*?"(?P<id>.*?)".*? *{$(?P<content>(\n|.)*?)^ *?};$'
 REGEX_SYMBOLS_ENTRY = r'(?P<default>default)?.*?($\n^)?xkb_symbols.*?"(?P<id>.*?)".*?( |\n)*?{$(?P<content>(\n|.)*?)^ *?};$'
 REGEX_SYMBOLS_ENTRY_ONE_LINE = r'(?P<default>default)?.*?($\n^)?xkb_symbols.*?"(?P<id>.*?)".*?{(?P<content>.*?) *?};$'
-REGEX_INCLUDES = r'include "(?P<include>.*?)"'
+REGEX_ENTRY_INCLUDES = r'include "(?P<include>.*?)"'
 REGEX_ENTRY_NAME = r'name\[Group\d*?\] *?= *?"(?P<name>.*?)";'
 REGEX_ENTRY_KEYS = r'key <(?P<keycode>.*?)>\s*?{\s*?\[\s*?(?P<keys>.*?)\s*]'
 
@@ -22,15 +22,11 @@ AZERTY_STYLE_LAYOUTS = [
     "ara"  # ara(azerty) & ara(azerty_digits)
 ]
 
-
 AZERTY_DETECTORS = {
     "AD01": "a",
     "AD02": "z",
     "AD03": "e"
 }
-
-#name\[Group\d*?\]=\"(?P<name>.*?)\"(\n|.)*?AD01.*?(a|A)\,(.|\n)*?^};$
-
 
 def clone_or_pull_repo(repo=UPSTREAM, dirname=DIR_XKEYBOARD_CONFIG):
     if not dirname.exists():
@@ -51,21 +47,12 @@ def fetch_individual_symbols(entries, content, filename):
         entries[f"{filename}({entry_id})"] = entry_content
     return entries
 
-def build_regex(detectors=AZERTY_DETECTORS):
-    regex = r'name\[Group\d*?\]="(?P<name>.*?)"(\n|.)*?'
-    for keycode in detectors:
-        expected = detectors[keycode]
-        regex += f".*?{keycode}.*?({expected.lower()}|{expected.upper()}),.*?\\n"
-    print(f"Final regex: {regex}")
-    return regex
-
 def skip(id_str):
     return id_str.startswith("kpdl") \
         or id_str.startswith("level")
 
-
 def super_include(content, include_from):
-    includes = findall(REGEX_INCLUDES, content)
+    includes = findall(REGEX_ENTRY_INCLUDES, content)
     print(f"Includes for {symbol_id}: {includes}")
     for include in includes:
         # TODO: skip data that is currently not used & would require extra implementation
@@ -81,15 +68,19 @@ def super_include(content, include_from):
         else:
             raise Error("Include failed")
     return content
-    
-
 
 if __name__ == "__main__":
+    """Step 0:
+        - Clone xkeyboard-config if dir doesn't exist
+        - Otherwise, pull changes from upstream
+    """
     clone_or_pull_repo()
-    regex = build_regex()
-
-
-
+    
+    """Step 1:
+        - Fetch all file contents
+        - Parse individual symbols
+        - Save individual symbols in xkb_entries dict
+    """
     xkb_entries = dict()
     symbol_files = list(DIR_XKEYBOARD_CONFIG_SYMBOLS.glob("**"))
     for symbol_file in symbol_files:
@@ -97,32 +88,17 @@ if __name__ == "__main__":
         filename = symbol_file.relative_to(DIR_XKEYBOARD_CONFIG_SYMBOLS)
         if symbol_file.is_dir() or skip(str(filename)):
             continue
-        #elif filename in AZERTY_STYLE_LAYOUTS:
-        #    print(f"Skipping known exception {filename}")
-        #    continue
-        #xkb_entries[filename] = dict()
 
         file_content = symbol_file.read_text("UTF-8")
         xkb_entries = fetch_individual_symbols(xkb_entries, file_content, filename)        
 
-    """
-    We're considering 3 levels of load importance for xkb entries
-        1. Highest priority; commonly imported symbols, like latin (found in latin(basic)). These are manually figured out
-        2. Middle priority; symbols that don't include imports from within the same file
-        3. Lowest priority; symbols that include imports from within the same file
-    """
-
     processed_all = dict()
     processed_azerty = dict()
+
+    """Step 2:
+        - Iterate over all symbol contents
+        - Parse them into dicts()
     """
-    for filename in [
-        "latin",
-        "us"
-    ]:
-        pass
-    """
-    
-    # Iterate over all symbol contents
     for symbol_id in xkb_entries:
         # Include the includes. Minimize the maximize or whatever
         print("-----")
@@ -174,18 +150,9 @@ if __name__ == "__main__":
         #elif "azerty" in symbol_content_included.lower():
         #    raise NotImplementedError("Azerty not detected, but 'azerty' was detected in symbol content")
 
-        continue
-        matches = findall(regex, entry_content)
-        if len(matches) > 0:
-            print(f"Azerty detected in {symbol_file}:")
-            for match in matches:
-                print(f"\t- {match[0]}")
-            print("-----")
-        elif "azerty" in entry_content.lower():
-            print(f"Didn't detect Azerty using regex, but {entry_id} contains the string 'azerty'. Is the Regex failing? (Path: {symbol_file})")
-            print("-----")
-        
-        print("---")
+    """Step 3:
+        - Save processed data into json files
+    """
     for output in [
         ["all", processed_all],
         ["azerty", processed_azerty]

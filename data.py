@@ -73,14 +73,13 @@ def super_include(content, include_from):
             print("Skipping keypad behaviour include")
             continue
 
+        old_content = content
         print(f"Including {include} from {include_from}")
-        new_content = content.replace(f'include "{include}"', super_include(xkb_entries[include], include_from))
-        if content != new_content:
+        content = old_content.replace(f'include "{include}"', super_include(xkb_entries[include], include_from))
+        if content != old_content:
             print("Succesful include!")
-        else: 
+        else:
             raise Error("Include failed")
-    
-
     return content
     
 

@@ -9,6 +9,8 @@ UPSTREAM = "https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config.git
 DIR_XKEYBOARD_CONFIG = Path("xkeyboard-config")
 DIR_XKEYBOARD_CONFIG_SYMBOLS = DIR_XKEYBOARD_CONFIG.joinpath("symbols/")
 DIR_DATA = Path("data/")
+MARKDOWN_OUT = DIR_DATA.joinpath("numeric-row.md")
+MARKDOWN_TEMPLATE = Path("template.md").read_text()
 
 #REGEX_SYMBOLS_ENTRY = r'(?P<default>default)?.*?$\n^xkb_symbols.*?"(?P<id>.*?)".*? *{$(?P<content>(\n|.)*?)^ *?};$'
 REGEX_SYMBOLS_ENTRY = r'(?P<default>default)?.*?($\n^)?xkb_symbols.*?"(?P<id>.*?)".*?( |\n)*?{$(?P<content>(\n|.)*?)^ *?};$'
@@ -40,6 +42,11 @@ AZERTY_DETECTORS = {
     "AD02": "z",
     #"AD03": "e"  TODO: needed?
 }
+
+MARKDOWN_PREFIX = """### AZERTY
+When using Niri with an AZERTY keyboard layout, the default workspace keybinds (or any keybinds using numbers) will not work as intended.
+"""
+
 
 def clone_or_pull_repo(repo=UPSTREAM, dirname=DIR_XKEYBOARD_CONFIG):
     if not dirname.exists():
@@ -178,3 +185,58 @@ if __name__ == "__main__":
         DIR_DATA.joinpath(f"{output[0]}.min.json").write_text(dumps(output[1]))
         DIR_DATA.joinpath(f"{output[0]}.json").write_text(dumps(output[1], indent=4))
     
+
+    """Step 4:
+        - Determine default numeric rows for azerty keyboards
+        - Save the result to markdown files
+    """
+    all_azerty = {**processed_azerty, **processed_azerty_style}
+    azerty_numerics = dict()
+    for entry_id in all_azerty:
+        entry = all_azerty[entry_id]
+        print(f"Processing entry {entry['id']}")
+        characters = list()
+        # get AE01-9
+        for index in range(1, 10):
+            characters.append(entry["keys"][f"AE{index:02}"][0])
+
+        out = {
+            "id": entry["id"],
+            "characters": characters
+        }
+        if "name" in entry:
+            out["name"] = entry["name"]
+        
+        row_style = ",".join(out["characters"])
+
+        if row_style not in azerty_numerics:
+            azerty_numerics[row_style] = list()
+        azerty_numerics[row_style].append(out)
+    
+    markdown_output = MARKDOWN_PREFIX
+    for row_style in azerty_numerics:
+        row_style_entries = azerty_numerics[row_style]
+        out = MARKDOWN_TEMPLATE
+
+        characters = row_style_entries[0]["characters"]
+        index = 0
+        for character in characters:
+            out = out.replace("{" + str(index+1) + "}", character)
+            index+=1
+
+        layouts = ""
+        first = True
+        for entry in row_style_entries:
+            if first:
+                first = False
+            else:
+                layouts += ", "
+            layouts += entry["id"]
+            if "name" in entry:
+                layouts += f" [{entry['name']}]"
+        out = out.replace("{layouts}", layouts)
+
+        markdown_output += out
+
+    MARKDOWN_OUT.write_text(markdown_output)
+  

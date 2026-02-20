@@ -34,6 +34,19 @@ def clone_or_pull_repo(repo=UPSTREAM, dirname=DIR_XKEYBOARD_CONFIG):
     else:
         run(["git", "pull"], cwd=dirname)
 
+def fetch_individual_symbols(content, filename):
+    global xkb_entries
+    symbol_entries = list(finditer(REGEX_SYMBOLS_ENTRY, file_content, RegexFlag.MULTILINE)) \
+        + list(finditer(REGEX_SYMBOLS_ENTRY_ONE_LINE, file_content, RegexFlag.MULTILINE))
+    for symbol_entry in symbol_entries:
+        entry_id = symbol_entry.group("id")
+        is_default = symbol_entry.group("default") == "default"
+        entry_content = symbol_entry.group("content")
+        if is_default:
+            print(f"Found default for {filename}, adding as {filename} & {filename}({entry_id})")
+            xkb_entries[f"{filename}"] = entry_content
+        xkb_entries[f"{filename}({entry_id})"] = entry_content
+
 def build_regex(detectors=AZERTY_DETECTORS):
     regex = r'name\[Group\d*?\]="(?P<name>.*?)"(\n|.)*?'
     for keycode in detectors:
@@ -53,13 +66,15 @@ def super_include(content, include_from):
 
         print(f"Including {include} from {include_from}")
         new_content = content.replace(f'include "{include}"', super_include(xkb_entries[include], include_from))
-        if content == new_content:
-            raise Error("Include failed ")
-
+        if content != new_content:
+            print("Succesful include!")
+        else: 
+            raise Error("Include failed")
     
 
     return content
     
+
 
 if __name__ == "__main__":
     clone_or_pull_repo()
@@ -80,17 +95,7 @@ if __name__ == "__main__":
         #xkb_entries[filename] = dict()
 
         file_content = symbol_file.read_text("UTF-8")
-        symbol_entries = list(finditer(REGEX_SYMBOLS_ENTRY, file_content, RegexFlag.MULTILINE)) \
-            + list(finditer(REGEX_SYMBOLS_ENTRY_ONE_LINE, file_content, RegexFlag.MULTILINE))
-        for symbol_entry in symbol_entries:
-            entry_id = symbol_entry.group("id")
-            is_default = symbol_entry.group("default") == "default"
-            entry_content = symbol_entry.group("content")
-            if is_default:
-                print(f"Found default for {filename}, adding as {filename} & {filename}({entry_id})")
-                xkb_entries[f"{filename}"] = entry_content
-            xkb_entries[f"{filename}({entry_id})"] = entry_content
-
+        fetch_individual_symbols(file_content, filename)        
 
     """
     We're considering 3 levels of load importance for xkb entries
@@ -108,8 +113,9 @@ if __name__ == "__main__":
         pass
     """
     
+    # Iterate over all symbol contents
     for symbol_id in xkb_entries:
-        print("---")
+        # Include the includes. Minimize the maximize or whatever
         symbol_content = super_include(xkb_entries[symbol_id], symbol_id)
         print("---")
 

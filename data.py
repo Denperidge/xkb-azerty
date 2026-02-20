@@ -150,6 +150,29 @@ if __name__ == "__main__":
             entry["keys"][key_match.group("keycode")] = keys
 
         processed_all[symbol_id] = entry
+        
+        print("> Determining if Azerty")
+        is_azerty = False
+        for keycode in AZERTY_DETECTORS:
+            try:
+                keys = entry["keys"][keycode]
+            except KeyError as e:
+                print(f"\tCouldn't find keycode {e.args[0]}, not azerty")
+                is_azerty = False
+                break
+            detector = AZERTY_DETECTORS[keycode]
+            if detector.lower() in keys or detector.upper() in keys:
+                print(f"\tFound {detector} in {keys}")
+                is_azerty = True
+            else:
+                print(f"\tDidn't find {detector} in {keys}, not azerty")
+                is_azerty = False
+                break
+        if is_azerty:
+            print("Is Azerty!")
+            processed_azerty[symbol_id] = entry
+        #elif "azerty" in symbol_content_included.lower():
+        #    raise NotImplementedError("Azerty not detected, but 'azerty' was detected in symbol content")
 
         continue
         matches = findall(regex, entry_content)
@@ -163,5 +186,10 @@ if __name__ == "__main__":
             print("-----")
         
         print("---")
-    DIR_DATA.joinpath("all.json").write_text(dumps(processed_all))
+    for output in [
+        ["all", processed_all],
+        ["azerty", processed_azerty]
+    ]:
+        DIR_DATA.joinpath(f"{output[0]}.min.json").write_text(dumps(output[1]))
+        DIR_DATA.joinpath(f"{output[0]}.json").write_text(dumps(output[1], indent=4))
     

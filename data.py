@@ -34,8 +34,7 @@ def clone_or_pull_repo(repo=UPSTREAM, dirname=DIR_XKEYBOARD_CONFIG):
     else:
         run(["git", "pull"], cwd=dirname)
 
-def fetch_individual_symbols(content, filename):
-    global xkb_entries
+def fetch_individual_symbols(entries, content, filename):
     symbol_entries = list(finditer(REGEX_SYMBOLS_ENTRY, file_content, RegexFlag.MULTILINE)) \
         + list(finditer(REGEX_SYMBOLS_ENTRY_ONE_LINE, file_content, RegexFlag.MULTILINE))
     for symbol_entry in symbol_entries:
@@ -44,8 +43,9 @@ def fetch_individual_symbols(content, filename):
         entry_content = symbol_entry.group("content")
         if is_default:
             print(f"Found default for {filename}, adding as {filename} & {filename}({entry_id})")
-            xkb_entries[f"{filename}"] = entry_content
-        xkb_entries[f"{filename}({entry_id})"] = entry_content
+            entries[f"{filename}"] = entry_content
+        entries[f"{filename}({entry_id})"] = entry_content
+    return entries
 
 def build_regex(detectors=AZERTY_DETECTORS):
     regex = r'name\[Group\d*?\]="(?P<name>.*?)"(\n|.)*?'
@@ -95,7 +95,7 @@ if __name__ == "__main__":
         #xkb_entries[filename] = dict()
 
         file_content = symbol_file.read_text("UTF-8")
-        fetch_individual_symbols(file_content, filename)        
+        xkb_entries = fetch_individual_symbols(xkb_entries, file_content, filename)        
 
     """
     We're considering 3 levels of load importance for xkb entries

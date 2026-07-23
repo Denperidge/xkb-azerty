@@ -48,6 +48,11 @@ def clone_or_pull_repo(repo: str=UPSTREAM, dirname: Path=DIR_XKEYBOARD_CONFIG) -
     else:
         return run(["git", "pull"], cwd=dirname)
 
+def write_json(to_write: object, filename: str):
+    _ = DIR_DATA.joinpath(f"{filename}.min.json").write_text(dumps(to_write))
+    _ = DIR_DATA.joinpath(f"{filename}.json").write_text(dumps(to_write, indent=4))
+            
+
 # { layout_id: file_content  }
 def fetch_individual_symbols(entries: dict[str, str], content: str, filename: Path) -> dict[str, str]:
     symbol_entries = list(finditer(REGEX_SYMBOLS_ENTRY, content, RegexFlag.MULTILINE)) \
@@ -94,6 +99,7 @@ class XkeyboardConfig(TypedDict):
     all: dict[str, Keymap]
     azerty: dict[str, Keymap]
     azerty_style: dict[str, Keymap]
+    azerty_all: dict[str, Keymap]
 
 
 
@@ -125,7 +131,8 @@ def parseXkeyboardConfig(save: bool=True) -> XkeyboardConfig:
     out: XkeyboardConfig = {
         "all": dict(),
         "azerty": dict(),
-        "azerty_style": dict()
+        "azerty_style": dict(),
+        "azerty_all": dict()
     }
 
     """Step 2:
@@ -186,18 +193,19 @@ def parseXkeyboardConfig(save: bool=True) -> XkeyboardConfig:
         elif "azerty" in symbol_content_included.lower():
             raise NotImplementedError(f"Azerty not detected, but 'azerty' was detected in symbol content ({symbol_id})")
 
+    out["azerty_all"] = {**out["azerty"], **out["azerty_style"]}
+
+
     """Step 3:
         - Save processed data into json files
     """
     if save:
-        for output in ["all", "azerty", "azerty-style"]:
+        for output in ["all", "azerty", "azerty-style", "azerty-all"]:
             data_key = output.replace("-", "_")
             if data_key not in out:
                 raise Exception(f"{data_key} not in out: {out}")
             to_write: dict[str, Keymap] = out[data_key]
-            
-            _ = DIR_DATA.joinpath(f"{output}.min.json").write_text(dumps(to_write))
-            _ = DIR_DATA.joinpath(f"{output}.json").write_text(dumps(to_write, indent=4))
+            write_json(to_write, output)
             
     return out
 
@@ -208,11 +216,12 @@ class NumericRowStyle(TypedDict):
 
 
 type NumericRowStyles = dict[str, list[NumericRowStyle]]
-def getNumericRowStyles(config: XkeyboardConfig) -> NumericRowStyles:
+def getNumericRowStyles(config: XkeyboardConfig, write:bool=True) -> NumericRowStyles:
     """Step 4:
         - Determine default numeric rows for all azerty keyboards
     """
-    all_azerty = {**config["azerty"], **config["azerty_style"]}
+    all_azerty = config["azerty_all"]
+
     azerty_numerics: dict[str, list[NumericRowStyle]] = dict()
     language_row_styles: dict[str, set[str]] = dict()
     for entry_id in all_azerty:
@@ -250,6 +259,15 @@ def getNumericRowStyles(config: XkeyboardConfig) -> NumericRowStyles:
         if language not in language_row_styles.keys():
             language_row_styles[language] = set()
         language_row_styles[language].add(row_style)
+
+    if write:
+        write_json(azerty_numerics, "azerty-numerics")
+
+        language_row_styles_with_lists: dict[str, list[str]] = {}
+        for language in language_row_styles:
+            language_row_styles_with_lists[language] = list(language_row_styles[language])
+
+        write_json(language_row_styles_with_lists, "azerty-row-styles")
 
     return azerty_numerics
 

@@ -1,0 +1,46 @@
+{
+    "sn": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
+    ],
+    "vn": [
+        "ampersand,dead_tilde,quotedbl,dead_acute,parenleft,minus,dead_grave,underscore,ccedilla"
+    ],
+    "tg": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
+    ],
+    "be": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla"
+    ],
+    "dz": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
+    ],
+    "fr": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla",
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla",
+        "U201E,U2116,percent,parenleft,colon,semicolon,question,U2116,degree",
+        "agrave,eacute,egrave,ecircumflex,parenleft,parenright,leftsinglequotemark,rightsinglequotemark,guillemotleft",
+        "1,2,3,4,5,6,7,8,9"
+    ],
+    "cm": [
+        "U0026,eacute,U0022,U0027,U0028,U002D,U00E8,underscore,ccedilla",
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
+    ],
+    "ml": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
+    ],
+    "cd": [
+        "ampersand,U0301,U0300,parenleft,braceleft,braceright,parenright,U0302,U030C"
+    ],
+    "ma": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
+    ],
+    "ru": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
+    ],
+    "gn": [
+        "U07F1,U07EB,U07F5,U07F4,parenleft,minus,U07EC,U07FA,U07ED"
+    ],
+    "ara": [
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
+    ]
+}

@@ -66,9 +66,9 @@ def skip(id_str: str) -> bool:
     return id_str.startswith("kpdl") \
         or id_str.startswith("level")
 
-def super_include(content: str, include_from: str):
+def super_include(xkb_entries: dict[str, str], content: str, include_from: str):
     includes: list[str] = findall(REGEX_ENTRY_INCLUDES, content)
-    print(f"Includes for {symbol_id}: {includes}")
+    #print(f"Includes for {symbol_id}: {includes}")
     for include in includes:
         # TODO: skip data that is currently not used & would require extra implementation
         if skip(include):
@@ -77,20 +77,34 @@ def super_include(content: str, include_from: str):
 
         old_content = content
         print(f"Including {include} from {include_from}")
-        content = old_content.replace(f'include "{include}"', super_include(xkb_entries[include], include_from))
+        content = old_content.replace(f'include "{include}"', super_include(xkb_entries, xkb_entries[include], include_from))
         if content != old_content:
             print("Succesful include!")
         else:
             raise Exception("Include failed")
     return content
 
-if __name__ == "__main__":
+class Keymap(TypedDict):
+    name: NotRequired[str]
+    id: str
+    keys: NotRequired[dict[str, list[str]]]
+
+
+class XkeyboardConfig(TypedDict):
+    all: dict[str, Keymap]
+    azerty: dict[str, Keymap]
+    azerty_style: dict[str, Keymap]
+
+
+
+def parseXkeyboardConfig(save: bool=True) -> XkeyboardConfig:
     """Step 0:
         - Clone xkeyboard-config if dir doesn't exist
         - Otherwise, pull changes from upstream
     """
     _ = clone_or_pull_repo()
     
+
     """Step 1:
         - Fetch all file contents
         - Parse individual symbols
@@ -108,9 +122,11 @@ if __name__ == "__main__":
         file_content = symbol_file.read_text("UTF-8")
         xkb_entries = fetch_individual_symbols(xkb_entries, file_content, filename)        
 
-    processed_all: dict[str, Keymap] = dict()
-    processed_azerty: dict[str, Keymap] = dict()
-    processed_azerty_style: dict[str, Keymap] = dict()
+    out: XkeyboardConfig = {
+        "all": dict(),
+        "azerty": dict(),
+        "azerty_style": dict()
+    }
 
     """Step 2:
         - Iterate over all symbol contents
@@ -121,21 +137,16 @@ if __name__ == "__main__":
         print("-----")
         print("Parsing " + symbol_id)
         symbol_content = xkb_entries[symbol_id]
-        symbol_content_included = super_include(symbol_content, symbol_id)
+        symbol_content_included = super_include(xkb_entries, symbol_content, symbol_id)
 
-        class Keymap(TypedDict):
-            name: NotRequired[str]
-            id: str
-            keys: dict[str, list[str]]
-
-
-        entry: Keymap = {"id": symbol_id, "keys": dict()}
+        entry: Keymap = {"id": symbol_id}
 
         entry_name = list(finditer(REGEX_ENTRY_NAME, symbol_content))
         print("\t> Fetching entry name")
         if entry_name:
             print("\tFound entry name")
             entry["name"] = entry_name[0].group("name")
+        entry["keys"] = dict()
         print("> Fetching entry keys")
         entry_keys = list(finditer(REGEX_ENTRY_KEYS, symbol_content_included))
 
@@ -147,7 +158,7 @@ if __name__ == "__main__":
                 continue
             entry["keys"][key_match.group("keycode")] = keys
 
-        processed_all[symbol_id] = entry
+        out["all"][symbol_id] = entry
         
         print("> Determining if Azerty")
         is_azerty = False
@@ -168,34 +179,40 @@ if __name__ == "__main__":
                 break
         if is_azerty:
             print("Is Azerty!")
-            processed_azerty[symbol_id] = entry
+            out["azerty"][symbol_id] = entry
         elif symbol_id in AZERTY_STYLE_LAYOUTS:
             print(f"Hardcoded azerty style layout ({symbol_id})")
-            processed_azerty_style[symbol_id] = entry
+            out["azerty_style"][symbol_id] = entry
         elif "azerty" in symbol_content_included.lower():
             raise NotImplementedError(f"Azerty not detected, but 'azerty' was detected in symbol content ({symbol_id})")
 
     """Step 3:
         - Save processed data into json files
     """
-    for output in [
-        ["all", processed_all],
-        ["azerty", processed_azerty],
-        ["azerty-style", processed_azerty_style]
-    ]:
-        _ = DIR_DATA.joinpath(f"{output[0]}.min.json").write_text(dumps(output[1]))
-        _ = DIR_DATA.joinpath(f"{output[0]}.json").write_text(dumps(output[1], indent=4))
-    
+    if save:
+        for output in ["all", "azerty", "azerty-style"]:
+            data_key = output.replace("-", "_")
+            if data_key not in out:
+                raise Exception(f"{data_key} not in out: {out}")
+            to_write: dict[str, Keymap] = out[data_key]
+            
+            _ = DIR_DATA.joinpath(f"{output}.min.json").write_text(dumps(to_write))
+            _ = DIR_DATA.joinpath(f"{output}.json").write_text(dumps(to_write, indent=4))
+            
+    return out
 
+class NumericRowStyle(TypedDict):
+    id: str  # for example, tg(basic)
+    characters: list[str]  # for ['ampersand', 'U0301', 'U0300', 'parenleft' ]
+    name: NotRequired[str]  # For example French (Togo)
+
+
+type NumericRowStyles = dict[str, list[NumericRowStyle]]
+def getNumericRowStyles(config: XkeyboardConfig) -> NumericRowStyles:
     """Step 4:
-        - Determine default numeric rows for azerty keyboards
+        - Determine default numeric rows for all azerty keyboards
     """
-    all_azerty = {**processed_azerty, **processed_azerty_style}
-    class NumericRowStyle(TypedDict):
-        id: str  # for example, tg(basic)
-        characters: list[str]  # for ['ampersand', 'U0301', 'U0300', 'parenleft' ]
-        name: NotRequired[str]  # For example French (Togo)
-
+    all_azerty = {**config["azerty"], **config["azerty_style"]}
     azerty_numerics: dict[str, list[NumericRowStyle]] = dict()
     language_row_styles: dict[str, set[str]] = dict()
     for entry_id in all_azerty:
@@ -205,6 +222,7 @@ if __name__ == "__main__":
         # get AE01-9 without modifiers, the numerical row
 
         for index in range(1, 10):
+            assert "keys" in entry
             value: str = entry["keys"][f"AE{index:02}"][0]
             if type(value) == str:
                 characters.append(value)
@@ -232,20 +250,8 @@ if __name__ == "__main__":
         if language not in language_row_styles.keys():
             language_row_styles[language] = set()
         language_row_styles[language].add(row_style)
-        #print(language)
-        #print("---")
-       # print("----")
-        #print(row_style)
-        #print("----")
-    print(azerty_numerics)
+
+    return azerty_numerics
 
 
-
-    #language_row_style_counts = dict()
-    #language_counts = dict()
-    #for language in language_row_styles:
-    #    language_row_style_counts[language] = len(language_row_styles[language])
-    #    if language not in language_counts:
-    #        language_counts[language] = 0
-    #    language_counts[language] += 1
 

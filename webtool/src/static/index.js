@@ -2,15 +2,29 @@ const input = document.getElementById("input");
 const output = document.getElementById("output");
 const layout = document.getElementById("layout");
 
-const regexCleanJsonString = /(^"|"$)/g;
+// Globals & constants
+const REGEX_SURROUNDING_DBLQUOTES = /(^"|"$)/g;
 
-const recipe = JSON.parse(document.getElementById("recipe").value)
-
+// Files that will be fetched & need caching
 let azertyAll;  // azerty-all.json
-let keysyms;  // keysyms.json
+let keysyms;  // keysyms.json, only fetched if recipe with mode: unicode
 
-function parse(text) {
+// Initialiazing, only run once
+async function init() {
+    // Get global data
+    azertyAll = await (await fetch("/azerty-all.min.json")).json();
+
+    input.value = await (await fetch(recipe.url)).text();
+    parse(input.value)
+}
+
+// Parser
+async function parse(text) {
     const selectedLayout = layout.selectedOptions[0].value;
+
+    // Contents of one of the files in _data/recipes/
+    const recipe = JSON.parse(document.getElementById("recipe").value)
+
     console.log(selectedLayout)
     console.log(azertyAll[selectedLayout])
 
@@ -23,7 +37,12 @@ function parse(text) {
         if (recipe.mode == "xkb") {
             // No further actions
         } else if (recipe.mode == "unicode") {
-            newKey = JSON.stringify(keysyms[newKey]).replaceAll(regexCleanJsonString, "");
+            if (keysyms == undefined) {
+                keysyms = await (await fetch("/keysyms.min.json")).json();
+            }
+
+            newKey = JSON.stringify(keysyms[newKey])
+                .replaceAll(REGEX_SURROUNDING_DBLQUOTES, "");
             console.log("unicode value: " + newKey)
         }
 
@@ -33,23 +52,11 @@ function parse(text) {
 
         text = text.replace(needle, newKey)
     }   
-        // const newValue = azertyAll[layout.selectedOptions[0].value][`AE0${i}`]
-        // console.log(newValue)
-        // text = text.replace(`"${i}"`, newValue)
 
     output.value = text;
 }
 
-async function init() {
-    azertyAll = await (await fetch("/azerty-all.min.json")).json();
-    if (recipe.mode != "xkb") {
-        keysyms = await (await fetch("/keysyms.min.json")).json();
-    }
-
-    input.value = await (await fetch(recipe.url)).text();
-    parse(input.value)
-}
-
+// Run init & add listeners
 input.addEventListener("change", (e) => {
     parse(input.value);
 });

@@ -1,9 +1,11 @@
 # xkb-azerty
-There are shockingly little resources about Azerty layouts out there, which sucks when you're a developer/linux user using Azerty.
 
-This project was part of the research needed for my documentation of [configuring Azerty for Niri](https://github.com/YaLTeR/niri/pull/3387), which uses xkeyboard-config/xkb for keyboard layout selection.
+A collection of [JSON data](data/) about XKB & Azerty keyboards.
 
-The scripts in this repository do *not* rely on an existing X11 installation; instead, it parses the upstream xkeyboard-config repository for the individual keyboard layouts.
+This includes a [webtool](https://github.com/Denperidge/xkb-azerty/tree/main/webtool)
+which translates dynamically fetched config files to any keyboard layout with the help of a simple [recipe system](https://github.com/Denperidge/xkb-azerty/tree/main/webtool/src/_data/recipes).
+
+---
 
 ## Explanation
 ### View output data
@@ -16,17 +18,40 @@ These keyboard layouts are Azerty style: while they don't have the azerty letter
 - AD01-AD06: the QWERTY or AZERTY letter keys. Due to qwerty being the default, only AD01-02 (A & Z) are needed to identify Azerty.
 - AE01-AE12: the numerical keys/top row, usually including numbers 0-9 and symbols. These are variable between azerty layouts, but very relevant for xkb shortcut binding etc. For the purposes of the [Niri data export](data/numeric-row.md), AE01-AE09 (0-9) are considered.
 
+### Background
+There are shockingly little resources about Azerty layouts out there, which sucks when you're a developer/linux user using Azerty.
+
+This project was part of the research needed for my documentation of [configuring Azerty for Niri](https://github.com/YaLTeR/niri/pull/3387), which uses xkeyboard-config/xkb for keyboard layout selection.
+
+The scripts in this repository do *not* rely on an existing X11 installation; instead, it parses the upstream xkeyboard-config repository for the individual keyboard layouts.
+
+---
+
 ## How-to
-### Run scripts/refresh data
+### Use the updater (generate data/ directory)
 Requirements: `python3`, `git`
 
 ```sh
 git clone https://github.com/Denperidge/xkb-azerty.git
 cd xkb-azerty/
 
-python data.py  # Depending on your OS/configuration, python3 or py -3 must be used
+# Depending on your OS/configuration, python3 or py -3 must be used
+python -m updater
 
 # Done!
+```
+
+
+### Build the webtool
+Requirements: `Node.js`, `corepack or pnpm`, `git`
+
+```sh
+git clone https://github.com/Denperidge/xkb-azerty.git
+cd xkb-azerty/webtool/
+
+pnpm start
+
+# Done! See the result in dist/
 ```
 
 ## License

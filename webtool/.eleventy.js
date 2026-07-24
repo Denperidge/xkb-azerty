@@ -16,7 +16,15 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addTemplate(
         "index.md",
-        readFileSync("../README.md", {encoding: "utf-8"}),
+        readFileSync("../README.md", {encoding: "utf-8"})
+            .replace("## Explanation", `<nav>
+                    <ul>
+                        <a href=""><li></li></a>
+                    </ul>
+                </nav>
+
+
+                <h2>Explanation</h2>`),
         {
             layout: "layout.pug",
         }
@@ -28,7 +36,8 @@ export default function (eleventyConfig) {
         "../data/azerty-all.min.json": "azerty-all.min.json",
         "../data/keysyms.min.json": "keysyms.min.json",
         "node_modules/mvp.css/mvp.css": "static/mvp.css",
-        "../data/": "data"
+        "../data/": "data",
+        "../LICENSE": "LICENSE"
     })
 
     eleventyConfig.addGlobalData("datafiles", readdirSync("../data/"))

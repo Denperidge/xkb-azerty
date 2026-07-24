@@ -4304,6 +4304,308 @@
             ]
         }
     },
+    "br(thinkpad_nodeadkeys)": {
+        "id": "br(thinkpad_nodeadkeys)",
+        "name": "Portuguese (Brazil, IBM/Lenovo ThinkPad, no dead keys)",
+        "keys": {
+            "AE01": [
+                "1",
+                "exclam",
+                "onesuperior",
+                "exclamdown"
+            ],
+            "AE02": [
+                "2",
+                "at",
+                "twosuperior",
+                "onehalf"
+            ],
+            "AE03": [
+                "3",
+                "numbersign",
+                "threesuperior",
+                "threequarters"
+            ],
+            "AE04": [
+                "4",
+                "dollar",
+                "sterling",
+                "onequarter"
+            ],
+            "AE05": [
+                "5",
+                "percent",
+                "cent",
+                "threeeighths"
+            ],
+            "AE06": [
+                "6",
+                "diaeresis",
+                "notsign",
+                "notsign"
+            ],
+            "AE07": [
+                "7",
+                "ampersand",
+                "braceleft",
+                "seveneighths"
+            ],
+            "AE08": [
+                "8",
+                "asterisk",
+                "bracketleft",
+                "trademark"
+            ],
+            "AE09": [
+                "9",
+                "parenleft",
+                "bracketright",
+                "plusminus"
+            ],
+            "AE10": [
+                "0",
+                "parenright",
+                "braceright",
+                "degree"
+            ],
+            "AE11": [
+                "minus",
+                "underscore",
+                "backslash",
+                "questiondown"
+            ],
+            "AE12": [
+                "equal",
+                "plus",
+                "section",
+                "radical"
+            ],
+            "AD01": [
+                "q",
+                "Q",
+                "slash",
+                "slash"
+            ],
+            "AD02": [
+                "w",
+                "W",
+                "question",
+                "question"
+            ],
+            "AD03": [
+                "e",
+                "E",
+                "degree",
+                "degree"
+            ],
+            "AD04": [
+                "r",
+                "R",
+                "registered",
+                "registered"
+            ],
+            "AD05": [
+                "t",
+                "T",
+                "tslash",
+                "Tslash"
+            ],
+            "AD06": [
+                "y",
+                "Y",
+                "leftarrow",
+                "yen"
+            ],
+            "AD07": [
+                "u",
+                "U",
+                "downarrow",
+                "uparrow"
+            ],
+            "AD08": [
+                "i",
+                "I",
+                "rightarrow",
+                "idotless"
+            ],
+            "AD09": [
+                "o",
+                "O",
+                "oslash",
+                "Oslash"
+            ],
+            "AD10": [
+                "p",
+                "P",
+                "thorn",
+                "THORN"
+            ],
+            "AD11": [
+                "apostrophe",
+                "grave"
+            ],
+            "AD12": [
+                "bracketleft",
+                "braceleft",
+                "ordfeminine",
+                "dagger"
+            ],
+            "AC01": [
+                "a",
+                "A",
+                "ae",
+                "AE"
+            ],
+            "AC02": [
+                "s",
+                "S",
+                "ssharp",
+                "U1E9E"
+            ],
+            "AC03": [
+                "d",
+                "D",
+                "eth",
+                "ETH"
+            ],
+            "AC04": [
+                "f",
+                "F",
+                "dstroke",
+                "ordfeminine"
+            ],
+            "AC05": [
+                "g",
+                "G",
+                "eng",
+                "ENG"
+            ],
+            "AC06": [
+                "h",
+                "H",
+                "hstroke",
+                "Hstroke"
+            ],
+            "AC07": [
+                "j",
+                "J",
+                "ezh",
+                "EZH"
+            ],
+            "AC08": [
+                "k",
+                "K",
+                "kra",
+                "ampersand"
+            ],
+            "AC09": [
+                "l",
+                "L",
+                "lstroke",
+                "Lstroke"
+            ],
+            "AC10": [
+                "ccedilla",
+                "Ccedilla",
+                "acute",
+                "doubleacute"
+            ],
+            "AC11": [
+                "asciitilde",
+                "asciicircum"
+            ],
+            "TLDE": [
+                "apostrophe",
+                "quotedbl",
+                "notsign",
+                "notsign"
+            ],
+            "BKSL": [
+                "bracketright",
+                "braceright",
+                "masculine",
+                "masculine"
+            ],
+            "AB01": [
+                "z",
+                "Z",
+                "guillemotleft",
+                "less"
+            ],
+            "AB02": [
+                "x",
+                "X",
+                "guillemotright",
+                "greater"
+            ],
+            "AB03": [
+                "c",
+                "C",
+                "copyright",
+                "copyright"
+            ],
+            "AB04": [
+                "v",
+                "V",
+                "doublelowquotemark",
+                "singlelowquotemark"
+            ],
+            "AB05": [
+                "b",
+                "B",
+                "leftdoublequotemark",
+                "leftsinglequotemark"
+            ],
+            "AB06": [
+                "n",
+                "N",
+                "rightdoublequotemark",
+                "rightsinglequotemark"
+            ],
+            "AB07": [
+                "m",
+                "M",
+                "mu",
+                "mu"
+            ],
+            "AB08": [
+                "comma",
+                "less",
+                "U2022",
+                "multiply"
+            ],
+            "AB09": [
+                "period",
+                "greater",
+                "periodcentered",
+                "division"
+            ],
+            "AB10": [
+                "semicolon",
+                "colon",
+                "ellipsis",
+                "abovedot"
+            ],
+            "LSGT": [
+                "backslash",
+                "bar",
+                "endash",
+                "emdash"
+            ],
+            "AB11": [
+                "slash",
+                "question",
+                "degree",
+                "questiondown"
+            ],
+            "RCTL": [
+                "slash",
+                "question",
+                "degree",
+                "questiondown"
+            ]
+        }
+    },
     "br(olpc)": {
         "id": "br(olpc)",
         "name": "Portuguese (Brazil)",
@@ -19541,6 +19843,288 @@
             "SPCE": [
                 "space",
                 "U200c"
+            ]
+        }
+    },
+    "in(mara)": {
+        "id": "in(mara)",
+        "name": "Mara",
+        "keys": {
+            "AE01": [
+                "1",
+                "exclam",
+                "onesuperior",
+                "exclamdown"
+            ],
+            "AE02": [
+                "2",
+                "at",
+                "twosuperior",
+                "oneeighth"
+            ],
+            "AE03": [
+                "3",
+                "numbersign",
+                "threesuperior",
+                "sterling"
+            ],
+            "AE04": [
+                "4",
+                "dollar",
+                "onequarter",
+                "dollar"
+            ],
+            "AE05": [
+                "5",
+                "percent",
+                "onehalf",
+                "threeeighths"
+            ],
+            "AE06": [
+                "6",
+                "asciicircum",
+                "threequarters",
+                "fiveeighths"
+            ],
+            "AE07": [
+                "7",
+                "ampersand",
+                "braceleft",
+                "seveneighths"
+            ],
+            "AE08": [
+                "8",
+                "asterisk",
+                "bracketleft",
+                "trademark"
+            ],
+            "AE09": [
+                "9",
+                "parenleft",
+                "bracketright",
+                "plusminus"
+            ],
+            "AE10": [
+                "0",
+                "parenright",
+                "braceright",
+                "degree"
+            ],
+            "AE11": [
+                "minus",
+                "underscore",
+                "backslash",
+                "questiondown"
+            ],
+            "AE12": [
+                "equal",
+                "plus",
+                "dead_cedilla",
+                "dead_ogonek"
+            ],
+            "AD01": [
+                "acircumflex",
+                "Acircumflex"
+            ],
+            "AD02": [
+                "w",
+                "W",
+                "U017F",
+                "section"
+            ],
+            "AD03": [
+                "e",
+                "E",
+                "e",
+                "E"
+            ],
+            "AD04": [
+                "r",
+                "R",
+                "paragraph",
+                "registered"
+            ],
+            "AD05": [
+                "t",
+                "T",
+                "tslash",
+                "Tslash"
+            ],
+            "AD06": [
+                "y",
+                "Y",
+                "leftarrow",
+                "yen"
+            ],
+            "AD07": [
+                "u",
+                "U",
+                "downarrow",
+                "uparrow"
+            ],
+            "AD08": [
+                "i",
+                "I",
+                "rightarrow",
+                "idotless"
+            ],
+            "AD09": [
+                "o",
+                "O",
+                "oslash",
+                "Oslash"
+            ],
+            "AD10": [
+                "p",
+                "P",
+                "thorn",
+                "THORN"
+            ],
+            "AD11": [
+                "bracketleft",
+                "braceleft",
+                "dead_diaeresis",
+                "dead_abovering"
+            ],
+            "AD12": [
+                "bracketright",
+                "braceright",
+                "dead_tilde",
+                "dead_macron"
+            ],
+            "AC01": [
+                "a",
+                "A",
+                "ae",
+                "AE"
+            ],
+            "AC02": [
+                "s",
+                "S",
+                "ssharp",
+                "U1E9E"
+            ],
+            "AC03": [
+                "d",
+                "D",
+                "eth",
+                "ETH"
+            ],
+            "AC04": [
+                "f",
+                "F",
+                "dstroke",
+                "ordfeminine"
+            ],
+            "AC05": [
+                "g",
+                "G",
+                "eng",
+                "ENG"
+            ],
+            "AC06": [
+                "h",
+                "H",
+                "hstroke",
+                "Hstroke"
+            ],
+            "AC07": [
+                "j",
+                "J"
+            ],
+            "AC08": [
+                "k",
+                "K",
+                "kra",
+                "ampersand"
+            ],
+            "AC09": [
+                "l",
+                "L",
+                "lstroke",
+                "Lstroke"
+            ],
+            "AC10": [
+                "semicolon",
+                "colon",
+                "dead_acute",
+                "dead_doubleacute"
+            ],
+            "AC11": [
+                "apostrophe",
+                "quotedbl",
+                "dead_circumflex",
+                "dead_caron"
+            ],
+            "TLDE": [
+                "grave",
+                "asciitilde",
+                "notsign",
+                "notsign"
+            ],
+            "BKSL": [
+                "backslash",
+                "bar",
+                "dead_grave",
+                "dead_breve"
+            ],
+            "AB01": [
+                "z",
+                "Z",
+                "guillemotleft",
+                "less"
+            ],
+            "AB02": [
+                "ocircumflex",
+                "Ocircumflex"
+            ],
+            "AB03": [
+                "c",
+                "C",
+                "cent",
+                "copyright"
+            ],
+            "AB04": [
+                "v",
+                "V",
+                "doublelowquotemark",
+                "singlelowquotemark"
+            ],
+            "AB05": [
+                "b",
+                "B",
+                "leftdoublequotemark",
+                "leftsinglequotemark"
+            ],
+            "AB06": [
+                "n",
+                "N",
+                "rightdoublequotemark",
+                "rightsinglequotemark"
+            ],
+            "AB07": [
+                "m",
+                "M",
+                "mu",
+                "masculine"
+            ],
+            "AB08": [
+                "comma",
+                "less",
+                "U2022",
+                "multiply"
+            ],
+            "AB09": [
+                "period",
+                "greater",
+                "periodcentered",
+                "division"
+            ],
+            "AB10": [
+                "slash",
+                "question",
+                "dead_belowdot",
+                "dead_abovedot"
             ]
         }
     },
@@ -41188,8 +41772,8 @@
                 "U10C88"
             ],
             "AB01": [
-                "U10CEC",
-                "U10CAC",
+                "U10CED",
+                "U10CAD",
                 "U10CC8",
                 "U10C88"
             ],
@@ -41596,8 +42180,8 @@
                 "U10C88"
             ],
             "AB01": [
-                "U10CEC",
-                "U10CAC",
+                "U10CED",
+                "U10CAD",
                 "U10CC8",
                 "U10C88"
             ],
@@ -42025,8 +42609,8 @@
                 "U10C88"
             ],
             "AB01": [
-                "U10CEC",
-                "U10CAC",
+                "U10CED",
+                "U10CAD",
                 "U10CC8",
                 "U10C88"
             ],
@@ -63636,6 +64220,288 @@
             ]
         }
     },
+    "mm(mara)": {
+        "id": "mm(mara)",
+        "name": "Mara",
+        "keys": {
+            "AE01": [
+                "1",
+                "exclam",
+                "onesuperior",
+                "exclamdown"
+            ],
+            "AE02": [
+                "2",
+                "at",
+                "twosuperior",
+                "oneeighth"
+            ],
+            "AE03": [
+                "3",
+                "numbersign",
+                "threesuperior",
+                "sterling"
+            ],
+            "AE04": [
+                "4",
+                "dollar",
+                "onequarter",
+                "dollar"
+            ],
+            "AE05": [
+                "5",
+                "percent",
+                "onehalf",
+                "threeeighths"
+            ],
+            "AE06": [
+                "6",
+                "asciicircum",
+                "threequarters",
+                "fiveeighths"
+            ],
+            "AE07": [
+                "7",
+                "ampersand",
+                "braceleft",
+                "seveneighths"
+            ],
+            "AE08": [
+                "8",
+                "asterisk",
+                "bracketleft",
+                "trademark"
+            ],
+            "AE09": [
+                "9",
+                "parenleft",
+                "bracketright",
+                "plusminus"
+            ],
+            "AE10": [
+                "0",
+                "parenright",
+                "braceright",
+                "degree"
+            ],
+            "AE11": [
+                "minus",
+                "underscore",
+                "backslash",
+                "questiondown"
+            ],
+            "AE12": [
+                "equal",
+                "plus",
+                "dead_cedilla",
+                "dead_ogonek"
+            ],
+            "AD01": [
+                "acircumflex",
+                "Acircumflex"
+            ],
+            "AD02": [
+                "w",
+                "W",
+                "U017F",
+                "section"
+            ],
+            "AD03": [
+                "e",
+                "E",
+                "e",
+                "E"
+            ],
+            "AD04": [
+                "r",
+                "R",
+                "paragraph",
+                "registered"
+            ],
+            "AD05": [
+                "t",
+                "T",
+                "tslash",
+                "Tslash"
+            ],
+            "AD06": [
+                "y",
+                "Y",
+                "leftarrow",
+                "yen"
+            ],
+            "AD07": [
+                "u",
+                "U",
+                "downarrow",
+                "uparrow"
+            ],
+            "AD08": [
+                "i",
+                "I",
+                "rightarrow",
+                "idotless"
+            ],
+            "AD09": [
+                "o",
+                "O",
+                "oslash",
+                "Oslash"
+            ],
+            "AD10": [
+                "p",
+                "P",
+                "thorn",
+                "THORN"
+            ],
+            "AD11": [
+                "bracketleft",
+                "braceleft",
+                "dead_diaeresis",
+                "dead_abovering"
+            ],
+            "AD12": [
+                "bracketright",
+                "braceright",
+                "dead_tilde",
+                "dead_macron"
+            ],
+            "AC01": [
+                "a",
+                "A",
+                "ae",
+                "AE"
+            ],
+            "AC02": [
+                "s",
+                "S",
+                "ssharp",
+                "U1E9E"
+            ],
+            "AC03": [
+                "d",
+                "D",
+                "eth",
+                "ETH"
+            ],
+            "AC04": [
+                "f",
+                "F",
+                "dstroke",
+                "ordfeminine"
+            ],
+            "AC05": [
+                "g",
+                "G",
+                "eng",
+                "ENG"
+            ],
+            "AC06": [
+                "h",
+                "H",
+                "hstroke",
+                "Hstroke"
+            ],
+            "AC07": [
+                "j",
+                "J"
+            ],
+            "AC08": [
+                "k",
+                "K",
+                "kra",
+                "ampersand"
+            ],
+            "AC09": [
+                "l",
+                "L",
+                "lstroke",
+                "Lstroke"
+            ],
+            "AC10": [
+                "semicolon",
+                "colon",
+                "dead_acute",
+                "dead_doubleacute"
+            ],
+            "AC11": [
+                "apostrophe",
+                "quotedbl",
+                "dead_circumflex",
+                "dead_caron"
+            ],
+            "TLDE": [
+                "grave",
+                "asciitilde",
+                "notsign",
+                "notsign"
+            ],
+            "BKSL": [
+                "backslash",
+                "bar",
+                "dead_grave",
+                "dead_breve"
+            ],
+            "AB01": [
+                "z",
+                "Z",
+                "guillemotleft",
+                "less"
+            ],
+            "AB02": [
+                "ocircumflex",
+                "Ocircumflex"
+            ],
+            "AB03": [
+                "c",
+                "C",
+                "cent",
+                "copyright"
+            ],
+            "AB04": [
+                "v",
+                "V",
+                "doublelowquotemark",
+                "singlelowquotemark"
+            ],
+            "AB05": [
+                "b",
+                "B",
+                "leftdoublequotemark",
+                "leftsinglequotemark"
+            ],
+            "AB06": [
+                "n",
+                "N",
+                "rightdoublequotemark",
+                "rightsinglequotemark"
+            ],
+            "AB07": [
+                "m",
+                "M",
+                "mu",
+                "masculine"
+            ],
+            "AB08": [
+                "comma",
+                "less",
+                "U2022",
+                "multiply"
+            ],
+            "AB09": [
+                "period",
+                "greater",
+                "periodcentered",
+                "division"
+            ],
+            "AB10": [
+                "slash",
+                "question",
+                "dead_belowdot",
+                "dead_abovedot"
+            ]
+        }
+    },
     "tg": {
         "id": "tg",
         "name": "French (Togo)",
@@ -65884,7 +66750,7 @@
                 "at",
                 "NoSymbol",
                 "twosuperior",
-                "NoSymbol"
+                "oneeighth"
             ],
             "AE03": [
                 "3",
@@ -65900,7 +66766,8 @@
                 "currency",
                 "NoSymbol",
                 "onequarter",
-                "EuroSign"
+                "EuroSign",
+                "currency"
             ],
             "AE05": [
                 "5",
@@ -66089,7 +66956,7 @@
                 "F",
                 "NoSymbol",
                 "NoSymbol",
-                "NoSymbol",
+                "dstroke",
                 "ordfeminine"
             ],
             "AC05": [
@@ -103521,7 +104388,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -103587,13 +104454,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -103809,7 +104676,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -103875,13 +104742,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -104097,7 +104964,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -104163,13 +105030,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -104385,7 +105252,7 @@
                 "grave",
                 "asciicircum",
                 "bracketleft",
-                "degree"
+                "caron"
             ],
             "AD12": [
                 "plus",
@@ -104451,13 +105318,13 @@
                 "ntilde",
                 "Ntilde",
                 "asciitilde",
-                "doubleacute"
+                "degree"
             ],
             "AC11": [
                 "acute",
                 "diaeresis",
                 "braceleft",
-                "caron"
+                "doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -104600,7 +105467,7 @@
                 "0",
                 "equal",
                 "grave",
-                "dead_doubleacute"
+                "dead_tilde"
             ],
             "AE11": [
                 "apostrophe",
@@ -104746,7 +105613,7 @@
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_tilde"
+                "dead_doubleacute"
             ],
             "BKSL": [
                 "ccedilla",
@@ -104949,7 +105816,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -105015,13 +105882,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -105237,7 +106104,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -105303,13 +106170,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -105973,7 +106840,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -106039,13 +106906,13 @@
                 "ntilde",
                 "Ntilde",
                 "asciitilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -112022,6 +112889,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -119509,6 +120391,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -134015,6 +134912,21 @@
             "I601": [
                 "XF86BrightnessMax"
             ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
+            ],
             "I616": [
                 "XF86KbdInputAssistPrev"
             ],
@@ -135666,6 +136578,21 @@
             "I601": [
                 "XF86BrightnessMax"
             ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
+            ],
             "I616": [
                 "XF86KbdInputAssistPrev"
             ],
@@ -136913,6 +137840,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -138354,6 +139296,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -169494,6 +170451,10 @@
         "id": "hyper(mod4)",
         "keys": {}
     },
+    "hyper(mod5)": {
+        "id": "hyper(mod5)",
+        "keys": {}
+    },
     "np": {
         "id": "np",
         "name": "Nepali",
@@ -196597,6 +197558,30 @@
             ]
         }
     },
+    "meta": {
+        "id": "meta",
+        "keys": {}
+    },
+    "meta(mod1)": {
+        "id": "meta(mod1)",
+        "keys": {}
+    },
+    "meta(mod2)": {
+        "id": "meta(mod2)",
+        "keys": {}
+    },
+    "meta(mod3)": {
+        "id": "meta(mod3)",
+        "keys": {}
+    },
+    "meta(mod4)": {
+        "id": "meta(mod4)",
+        "keys": {}
+    },
+    "meta(mod5)": {
+        "id": "meta(mod5)",
+        "keys": {}
+    },
     "korean": {
         "id": "korean",
         "name": "Korean",
@@ -209333,6 +210318,21 @@
             "I601": [
                 "XF86BrightnessMax"
             ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
+            ],
             "I616": [
                 "XF86KbdInputAssistPrev"
             ],
@@ -210984,6 +211984,21 @@
             "I601": [
                 "XF86BrightnessMax"
             ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
+            ],
             "I616": [
                 "XF86KbdInputAssistPrev"
             ],
@@ -212231,6 +213246,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -213672,6 +214702,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -252102,25 +253147,6 @@
             ]
         }
     },
-    "altwin(meta_win)": {
-        "id": "altwin(meta_win)",
-        "keys": {
-            "LALT": [
-                "Alt_L",
-                "Alt_L"
-            ],
-            "RALT": [
-                "Alt_R",
-                "Alt_R"
-            ],
-            "LWIN": [
-                "Meta_L"
-            ],
-            "RWIN": [
-                "Meta_R"
-            ]
-        }
-    },
     "altwin(left_meta_win)": {
         "id": "altwin(left_meta_win)",
         "keys": {
@@ -252130,6 +253156,25 @@
             ],
             "LWIN": [
                 "Meta_L"
+            ]
+        }
+    },
+    "altwin(meta_win)": {
+        "id": "altwin(meta_win)",
+        "keys": {
+            "LALT": [
+                "Alt_L",
+                "Alt_L"
+            ],
+            "LWIN": [
+                "Meta_L"
+            ],
+            "RALT": [
+                "Alt_R",
+                "Alt_R"
+            ],
+            "RWIN": [
+                "Meta_R"
             ]
         }
     },
@@ -261441,6 +262486,306 @@
             ]
         }
     },
+    "pl(colemak_dh_ortho)": {
+        "id": "pl(colemak_dh_ortho)",
+        "name": "Polish (Colemak-DH Ortholinear)",
+        "keys": {
+            "TLDE": [
+                "grave",
+                "asciitilde",
+                "dead_tilde",
+                "asciitilde"
+            ],
+            "AE01": [
+                "1",
+                "exclam",
+                "exclamdown",
+                "onesuperior"
+            ],
+            "AE02": [
+                "2",
+                "at",
+                "masculine",
+                "twosuperior"
+            ],
+            "AE03": [
+                "3",
+                "numbersign",
+                "ordfeminine",
+                "threesuperior"
+            ],
+            "AE04": [
+                "4",
+                "dollar",
+                "cent",
+                "sterling"
+            ],
+            "AE05": [
+                "5",
+                "percent",
+                "EuroSign",
+                "yen"
+            ],
+            "AE06": [
+                "6",
+                "asciicircum",
+                "hstroke",
+                "Hstroke"
+            ],
+            "AE07": [
+                "7",
+                "ampersand",
+                "eth",
+                "ETH"
+            ],
+            "AE08": [
+                "8",
+                "asterisk",
+                "thorn",
+                "THORN"
+            ],
+            "AE09": [
+                "9",
+                "parenleft",
+                "leftsinglequotemark",
+                "leftdoublequotemark"
+            ],
+            "AE10": [
+                "0",
+                "parenright",
+                "rightsinglequotemark",
+                "rightdoublequotemark"
+            ],
+            "AE11": [
+                "minus",
+                "underscore",
+                "endash",
+                "emdash"
+            ],
+            "AE12": [
+                "equal",
+                "plus",
+                "multiply",
+                "division"
+            ],
+            "AD01": [
+                "q",
+                "Q",
+                "ae",
+                "AE"
+            ],
+            "AD02": [
+                "w",
+                "W",
+                "dead_circumflex",
+                "asciitilde"
+            ],
+            "AD03": [
+                "f",
+                "F",
+                "ssharp",
+                "0x1001e9e"
+            ],
+            "AD04": [
+                "p",
+                "P",
+                "oslash",
+                "Oslash"
+            ],
+            "AD05": [
+                "b",
+                "B",
+                "dead_breve",
+                "asciitilde"
+            ],
+            "AD06": [
+                "j",
+                "J",
+                "dstroke",
+                "Dstroke"
+            ],
+            "AD07": [
+                "l",
+                "L",
+                "lstroke",
+                "Lstroke"
+            ],
+            "AD08": [
+                "u",
+                "U",
+                "uacute",
+                "Uacute"
+            ],
+            "AD09": [
+                "y",
+                "Y",
+                "udiaeresis",
+                "Udiaeresis"
+            ],
+            "AD10": [
+                "semicolon",
+                "colon",
+                "odiaeresis",
+                "Odiaeresis"
+            ],
+            "AD11": [
+                "bracketleft",
+                "braceleft",
+                "guillemotleft",
+                "0x1002039"
+            ],
+            "AD12": [
+                "bracketright",
+                "braceright",
+                "guillemotright",
+                "0x100203a"
+            ],
+            "BKSL": [
+                "backslash",
+                "bar",
+                "asciitilde",
+                "asciitilde"
+            ],
+            "AC01": [
+                "a",
+                "A",
+                "aogonek",
+                "Aogonek"
+            ],
+            "AC02": [
+                "r",
+                "R",
+                "dead_grave",
+                "asciitilde"
+            ],
+            "AC03": [
+                "s",
+                "S",
+                "sacute",
+                "Sacute"
+            ],
+            "AC04": [
+                "t",
+                "T",
+                "dead_acute",
+                "dead_doubleacute"
+            ],
+            "AC05": [
+                "g",
+                "G",
+                "dead_ogonek",
+                "asciitilde"
+            ],
+            "AC06": [
+                "m",
+                "M",
+                "dead_macron",
+                "asciitilde"
+            ],
+            "AC07": [
+                "n",
+                "N",
+                "nacute",
+                "Nacute"
+            ],
+            "AC08": [
+                "e",
+                "E",
+                "eogonek",
+                "Eogonek"
+            ],
+            "AC09": [
+                "i",
+                "I",
+                "iacute",
+                "Iacute"
+            ],
+            "AC10": [
+                "o",
+                "O",
+                "oacute",
+                "Oacute"
+            ],
+            "AC11": [
+                "apostrophe",
+                "quotedbl",
+                "otilde",
+                "Otilde"
+            ],
+            "AB01": [
+                "z",
+                "Z",
+                "zabovedot",
+                "Zabovedot"
+            ],
+            "AB02": [
+                "x",
+                "X",
+                "zacute",
+                "Zacute"
+            ],
+            "AB03": [
+                "c",
+                "C",
+                "cacute",
+                "Cacute"
+            ],
+            "AB04": [
+                "d",
+                "D",
+                "dead_diaeresis",
+                "asciitilde"
+            ],
+            "AB05": [
+                "v",
+                "V",
+                "oe",
+                "OE"
+            ],
+            "AB06": [
+                "k",
+                "K",
+                "dead_abovering",
+                "asciitilde"
+            ],
+            "AB07": [
+                "h",
+                "H",
+                "dead_caron",
+                "asciitilde"
+            ],
+            "AB08": [
+                "comma",
+                "less",
+                "dead_cedilla",
+                "asciitilde"
+            ],
+            "AB09": [
+                "period",
+                "greater",
+                "dead_abovedot",
+                "asciitilde"
+            ],
+            "AB10": [
+                "slash",
+                "question",
+                "questiondown",
+                "asciitilde"
+            ],
+            "LSGT": [
+                "z",
+                "Z",
+                "ae",
+                "AE"
+            ],
+            "SPCE": [
+                "space",
+                "space",
+                "space",
+                "nobreakspace"
+            ]
+        }
+    },
     "pl(sun_type6)": {
         "id": "pl(sun_type6)",
         "keys": {
@@ -261942,6 +263287,300 @@
                 "U2C0F",
                 "any",
                 "any"
+            ]
+        }
+    },
+    "pl(slaviature)": {
+        "id": "pl(slaviature)",
+        "name": "Polish (Slavistic Phonetic Alphabet)",
+        "keys": {
+            "TLDE": [
+                "grave",
+                "asciitilde",
+                "U02B9",
+                "combining_tilde"
+            ],
+            "AE01": [
+                "1",
+                "exclam",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AE02": [
+                "2",
+                "at",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AE03": [
+                "3",
+                "numbersign",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AE04": [
+                "4",
+                "dollar",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AE05": [
+                "5",
+                "percent",
+                "EuroSign",
+                "VoidSymbol"
+            ],
+            "AE06": [
+                "6",
+                "asciicircum",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AE07": [
+                "7",
+                "ampersand",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AE08": [
+                "8",
+                "asterisk",
+                "U030A",
+                "VoidSymbol"
+            ],
+            "AE09": [
+                "9",
+                "parenleft",
+                "U032F",
+                "VoidSymbol"
+            ],
+            "AE10": [
+                "0",
+                "parenright",
+                "U032E",
+                "VoidSymbol"
+            ],
+            "AE11": [
+                "minus",
+                "underscore",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AE12": [
+                "equal",
+                "plus",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AD01": [
+                "q",
+                "Q",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AD02": [
+                "w",
+                "W",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AD03": [
+                "e",
+                "E",
+                "eabovedot",
+                "Eabovedot"
+            ],
+            "AD04": [
+                "r",
+                "R",
+                "rcedilla",
+                "Rcedilla"
+            ],
+            "AD05": [
+                "t",
+                "T",
+                "U1E6D",
+                "U1E6C"
+            ],
+            "AD06": [
+                "y",
+                "Y",
+                "Greek_gamma",
+                "Greek_GAMMA"
+            ],
+            "AD07": [
+                "u",
+                "U",
+                "udiaeresis",
+                "Udiaeresis"
+            ],
+            "AD08": [
+                "i",
+                "I",
+                "itilde",
+                "Itilde"
+            ],
+            "AD09": [
+                "o",
+                "O",
+                "U022F",
+                "U022E"
+            ],
+            "AD10": [
+                "p",
+                "P",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AD11": [
+                "bracketleft",
+                "braceleft",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AD12": [
+                "bracketright",
+                "braceright",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AC01": [
+                "a",
+                "A",
+                "adiaeresis",
+                "Adiaeresis"
+            ],
+            "AC02": [
+                "s",
+                "S",
+                "sacute",
+                "Sacute"
+            ],
+            "AC03": [
+                "d",
+                "D",
+                "U1E0D",
+                "U1E0C"
+            ],
+            "AC04": [
+                "f",
+                "F",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AC05": [
+                "g",
+                "G",
+                "U01F5",
+                "U01F4"
+            ],
+            "AC06": [
+                "h",
+                "H",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AC07": [
+                "j",
+                "J",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AC08": [
+                "k",
+                "K",
+                "U1E31",
+                "U1E30"
+            ],
+            "AC09": [
+                "l",
+                "L",
+                "lcedilla",
+                "Lcedilla"
+            ],
+            "AC10": [
+                "semicolon",
+                "colon",
+                "U0328",
+                "U0308"
+            ],
+            "AC11": [
+                "apostrophe",
+                "quotedbl",
+                "combining_acute",
+                "VoidSymbol"
+            ],
+            "BKSL": [
+                "backslash",
+                "bar",
+                "VoidSymbol",
+                "VoidSymbol"
+            ],
+            "AB01": [
+                "z",
+                "Z",
+                "ezh",
+                "EZH"
+            ],
+            "AB02": [
+                "Greek_chi",
+                "Greek_CHI",
+                "zacute",
+                "Zacute"
+            ],
+            "AB03": [
+                "c",
+                "C",
+                "cacute",
+                "Cacute"
+            ],
+            "AB04": [
+                "v",
+                "V",
+                "U030C",
+                "VoidSymbol"
+            ],
+            "AB05": [
+                "b",
+                "B",
+                "U1E47",
+                "U1E46"
+            ],
+            "AB06": [
+                "n",
+                "N",
+                "nacute",
+                "Nacute"
+            ],
+            "AB07": [
+                "m",
+                "M",
+                "eng",
+                "ENG"
+            ],
+            "AB08": [
+                "comma",
+                "less",
+                "U0326",
+                "VoidSymbol"
+            ],
+            "AB09": [
+                "period",
+                "greater",
+                "combining_belowdot",
+                "VoidSymbol"
+            ],
+            "AB10": [
+                "slash",
+                "question",
+                "U0329",
+                "VoidSymbol"
+            ],
+            "SPCE": [
+                "space",
+                "space",
+                "nobreakspace",
+                "nobreakspace"
             ]
         }
     },
@@ -280252,7 +281891,7 @@
                 "at",
                 "NoSymbol",
                 "twosuperior",
-                "NoSymbol"
+                "oneeighth"
             ],
             "AE03": [
                 "3",
@@ -280268,7 +281907,8 @@
                 "currency",
                 "NoSymbol",
                 "onequarter",
-                "EuroSign"
+                "EuroSign",
+                "currency"
             ],
             "AE05": [
                 "5",
@@ -280457,7 +282097,7 @@
                 "F",
                 "NoSymbol",
                 "NoSymbol",
-                "NoSymbol",
+                "dstroke",
                 "ordfeminine"
             ],
             "AC05": [
@@ -304428,7 +306068,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -304494,13 +306134,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -304715,7 +306355,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -304781,13 +306421,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -305002,7 +306642,7 @@
                 "grave",
                 "asciicircum",
                 "bracketleft",
-                "degree"
+                "caron"
             ],
             "AD12": [
                 "plus",
@@ -305068,13 +306708,13 @@
                 "ntilde",
                 "Ntilde",
                 "asciitilde",
-                "doubleacute"
+                "degree"
             ],
             "AC11": [
                 "acute",
                 "diaeresis",
                 "braceleft",
-                "caron"
+                "doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -305216,7 +306856,7 @@
                 "0",
                 "equal",
                 "grave",
-                "dead_doubleacute"
+                "dead_tilde"
             ],
             "AE11": [
                 "apostrophe",
@@ -305362,7 +307002,7 @@
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_tilde"
+                "dead_doubleacute"
             ],
             "BKSL": [
                 "ccedilla",
@@ -305564,7 +307204,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -305630,13 +307270,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -305851,7 +307491,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -305917,13 +307557,13 @@
                 "ntilde",
                 "Ntilde",
                 "dead_tilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -306357,7 +307997,7 @@
                 "dead_grave",
                 "dead_circumflex",
                 "bracketleft",
-                "dead_abovering"
+                "dead_caron"
             ],
             "AD12": [
                 "plus",
@@ -306423,13 +308063,13 @@
                 "ntilde",
                 "Ntilde",
                 "asciitilde",
-                "dead_doubleacute"
+                "dead_abovering"
             ],
             "AC11": [
                 "dead_acute",
                 "dead_diaeresis",
                 "braceleft",
-                "dead_caron"
+                "dead_doubleacute"
             ],
             "TLDE": [
                 "masculine",
@@ -309735,6 +311375,21 @@
             "I601": [
                 "XF86BrightnessMax"
             ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
+            ],
             "I616": [
                 "XF86KbdInputAssistPrev"
             ],
@@ -311172,6 +312827,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -312824,6 +314494,21 @@
             "I601": [
                 "XF86BrightnessMax"
             ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
+            ],
             "I616": [
                 "XF86KbdInputAssistPrev"
             ],
@@ -314071,6 +315756,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -315512,6 +317212,21 @@
             ],
             "I601": [
                 "XF86BrightnessMax"
+            ],
+            "I602": [
+                "XF86ElectronicPrivacyScreenOn"
+            ],
+            "I603": [
+                "XF86ElectronicPrivacyScreenOff"
+            ],
+            "I604": [
+                "XF86ActionOnSelection"
+            ],
+            "I605": [
+                "XF86ContextualInsert"
+            ],
+            "I606": [
+                "XF86ContextualQuery"
             ],
             "I616": [
                 "XF86KbdInputAssistPrev"
@@ -377491,6 +379206,212 @@
             ]
         }
     },
+    "blackberry_vndr/key2/us(key2)": {
+        "id": "blackberry_vndr/key2/us(key2)",
+        "keys": {
+            "AD01": [
+                "q",
+                "Q",
+                "numbersign",
+                "none",
+                "asciitilde"
+            ],
+            "AD02": [
+                "w",
+                "W",
+                "1",
+                "none",
+                "grave"
+            ],
+            "AD03": [
+                "e",
+                "E",
+                "2",
+                "none",
+                "braceleft"
+            ],
+            "AD04": [
+                "r",
+                "R",
+                "3",
+                "none",
+                "braceright"
+            ],
+            "AD05": [
+                "t",
+                "T",
+                "parenleft",
+                "none",
+                "bracketleft"
+            ],
+            "AD06": [
+                "y",
+                "Y",
+                "parenright",
+                "none",
+                "bracketright"
+            ],
+            "AD07": [
+                "u",
+                "U",
+                "underscore",
+                "none",
+                "less"
+            ],
+            "AD08": [
+                "i",
+                "I",
+                "minus",
+                "none",
+                "greater"
+            ],
+            "AD09": [
+                "o",
+                "O",
+                "plus",
+                "none",
+                "asciicircum"
+            ],
+            "AD10": [
+                "p",
+                "P",
+                "at",
+                "none",
+                "percent"
+            ],
+            "AC01": [
+                "a",
+                "A",
+                "asterisk",
+                "none",
+                "equal"
+            ],
+            "AC02": [
+                "s",
+                "S",
+                "4",
+                "none",
+                "division"
+            ],
+            "AC03": [
+                "d",
+                "D",
+                "5",
+                "none",
+                "plusminus"
+            ],
+            "AC04": [
+                "f",
+                "F",
+                "6",
+                "none",
+                "U2022"
+            ],
+            "AC05": [
+                "g",
+                "G",
+                "slash",
+                "none",
+                "backslash"
+            ],
+            "AC06": [
+                "h",
+                "H",
+                "colon",
+                "none",
+                "bar"
+            ],
+            "AC07": [
+                "j",
+                "J",
+                "semicolon",
+                "none",
+                "ampersand"
+            ],
+            "AC08": [
+                "k",
+                "K",
+                "apostrophe",
+                "none",
+                "leftdoublequotemark"
+            ],
+            "AC09": [
+                "l",
+                "L",
+                "quotedbl",
+                "none",
+                "rightdoublequotemark"
+            ],
+            "AB01": [
+                "z",
+                "Z",
+                "7",
+                "none",
+                "U00AB"
+            ],
+            "AB02": [
+                "x",
+                "X",
+                "8",
+                "none",
+                "U00BB"
+            ],
+            "AB03": [
+                "c",
+                "C",
+                "9",
+                "none",
+                "trademark"
+            ],
+            "AB04": [
+                "v",
+                "V",
+                "question",
+                "none",
+                "questiondown"
+            ],
+            "AB05": [
+                "b",
+                "B",
+                "exclam",
+                "none",
+                "exclamdown"
+            ],
+            "AB06": [
+                "n",
+                "N",
+                "comma",
+                "none",
+                "brokenbar"
+            ],
+            "AB07": [
+                "m",
+                "M",
+                "period",
+                "none",
+                "U00A7"
+            ],
+            "I442": [
+                "dollar",
+                "EuroSign",
+                "XF86AudioMute",
+                "none",
+                "dollar"
+            ],
+            "SPCE": [
+                "space",
+                "space",
+                "space",
+                "space",
+                "space"
+            ],
+            "I594": [
+                "XF86Dictate",
+                "none",
+                "0"
+            ]
+        }
+    },
     "hp_vndr/us(hil)": {
         "id": "hp_vndr/us(hil)",
         "keys": {
@@ -391367,7 +393288,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"
@@ -391478,7 +393399,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"
@@ -392457,7 +394378,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"
@@ -392756,7 +394677,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"
@@ -393065,7 +394986,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"
@@ -393902,7 +395823,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"
@@ -394202,7 +396123,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"
@@ -394501,7 +396422,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"
@@ -394811,7 +396732,7 @@
                 "Find"
             ],
             "DELE": [
-                "apLineDel"
+                "Delete"
             ],
             "SELE": [
                 "Select"

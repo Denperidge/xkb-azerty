@@ -15,11 +15,11 @@
         "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
     ],
     "fr": [
-        "ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla",
-        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla",
         "U201E,U2116,percent,parenleft,colon,semicolon,question,U2116,degree",
         "agrave,eacute,egrave,ecircumflex,parenleft,parenright,leftsinglequotemark,rightsinglequotemark,guillemotleft",
-        "1,2,3,4,5,6,7,8,9"
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla",
+        "1,2,3,4,5,6,7,8,9",
+        "ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla"
     ],
     "cm": [
         "U0026,eacute,U0022,U0027,U0028,U002D,U00E8,underscore,ccedilla",

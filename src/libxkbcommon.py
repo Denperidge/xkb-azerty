@@ -1,6 +1,6 @@
-from .shared import clone_or_pull_repo
+from .shared import clone_or_pull_repo, write_json
 from pathlib import Path
-from re import findall, match
+from re import findall
 
 UPSTREAM = "https://github.com/xkbcommon/libxkbcommon.git";
 DIR_LIBXKBCOMMON = Path("vendor/libxkbcommon");
@@ -22,6 +22,8 @@ def init():
         reformat = entry[1].replace('0x', r'\u')
         characters[entry[0]] = (reformat.encode("utf-8")).decode("unicode-escape")
 
+    write_json(characters, "keysyms")
+
 r"""
 input: "ampersand"
 output: "\u0026"
@@ -29,5 +31,6 @@ output: "\u0026"
 """
 def xkb_alias_to_character(alias: str):
     return characters[alias]
+
 
 init()

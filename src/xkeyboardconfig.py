@@ -1,13 +1,11 @@
 from pathlib import Path
 from re import findall, match, RegexFlag, finditer
-from json import dumps
 from typing import TypedDict, NotRequired, Callable
-from .shared import clone_or_pull_repo
+from .shared import clone_or_pull_repo, write_json
 
 UPSTREAM = "https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config.git";
 DIR_XKEYBOARD_CONFIG = Path("vendor/xkeyboard-config");
 DIR_XKEYBOARD_CONFIG_SYMBOLS = DIR_XKEYBOARD_CONFIG.joinpath("symbols/")
-DIR_DATA_OUT = Path("data/")
 
 REGEX_SYMBOLS_ENTRY = r'(?P<default>default)?.*?($\n^)?xkb_symbols.*?"(?P<id>.*?)".*?( |\n)*?{$(?P<content>(\n|.)*?)^ *?};$'
 REGEX_SYMBOLS_ENTRY_ONE_LINE = r'(?P<default>default)?.*?($\n^)?xkb_symbols.*?"(?P<id>.*?)".*?{(?P<content>.*?) *?};$'
@@ -39,11 +37,6 @@ AZERTY_DETECTORS = {
     "AD02": "z",
     #"AD03": "e"  TODO: needed?
 }
-
-def write_json(to_write: object, filename: str):
-    _ = DIR_DATA_OUT.joinpath(f"{filename}.min.json").write_text(dumps(to_write))
-    _ = DIR_DATA_OUT.joinpath(f"{filename}.json").write_text(dumps(to_write, indent=4))
-            
 
 # { layout_id: file_content  }
 def fetch_individual_symbols(entries: dict[str, str], content: str, filename: Path) -> dict[str, str]:

@@ -4,6 +4,8 @@ const layout = document.getElementById("layout");
 
 const regexCleanJsonString = /(^"|"$)/g;
 
+const recipe = JSON.parse(document.getElementById("recipe").value)
+
 let azertyAll;  // azerty-all.json
 let keysyms;  // keysyms.json
 
@@ -48,7 +50,7 @@ async function init() {
     parse(input.value)
 }
 
-output.addEventListener("change", (e) => {
+input.addEventListener("change", (e) => {
     parse(input.value);
 });
 

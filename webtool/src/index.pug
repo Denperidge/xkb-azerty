@@ -28,5 +28,8 @@ block content
 
         h2 Azerty
         textarea#output
-    - const recipeString = "const recipe = " + JSON.stringify(recipe)
-    script!=recipeString
+
+
+        fieldset
+            summary Meow
+            textarea#recipe=JSON.stringify(recipe, undefined, 2)

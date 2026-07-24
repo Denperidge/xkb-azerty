@@ -1,4 +1,5 @@
 xkeyboard-config
+libxkbcommon
 __pycache__
 node_modules
 dist

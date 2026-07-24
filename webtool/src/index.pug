@@ -1,12 +1,32 @@
+---
+pagination:
+    data: recipes
+    size: 1
+    alias: recipeId
+---
 extends /layout.pug
 
+
 block content
+    - console.log(recipeId)
+    - const recipe = recipes[recipeId]
     main
         h1 Yazi
+        style.
+            textarea {
+                width: 80vw;
+                height: 40vh;
+            }
 
+        select#layout
+            for layout in azertyAll
+                - const label = layout.name ? `${layout.name} (${layout.id})` : layout.id;
+                - const selected = layout.id == "be";
+                option(value=layout.id selected=selected)=label
         h2 Original
-        textarea=configs.yazi
+        textarea#input
 
         h2 Azerty
-        textarea#parsed
-    
+        textarea#output
+    - const recipeString = "const recipe = " + JSON.stringify(recipe)
+    script!=recipeString

@@ -14,11 +14,12 @@ html(lang="en")
         meta(property="og:site_name" content=title)
 
         link(rel="stylesheet" href="/static/mvp.css")
-        link(rel="stylesheet" href="/static/stylesheet.css")
         
         block head
     body 
         block content
+            main
+                | !{content}
 
         script(src="/static/index.js")
 

@@ -3,6 +3,8 @@ pagination:
     data: recipes
     size: 1
     alias: recipeId
+eleventyComputed:
+    permalink: "|!{recipeId}/index.html"
 ---
 extends /layout.pug
 
@@ -17,6 +19,8 @@ mixin lbl(id, text)
 
 
 block content
+
+    link(rel="stylesheet" href="/static/stylesheet.css")
     - console.log(recipeId)
     - const recipe = recipes[recipeId]
     main

@@ -1,5 +1,6 @@
 {
     "$schema": "../schema.json",
+    "name": "Yazi numeric (tag: shipped)",
     "url": "https://raw.githubusercontent.com/sxyazi/yazi/refs/tags/shipped/yazi-config/preset/keymap-default.toml",
     "mode": "unicode",
     "outputTemplate": "\"${KEY}\"",

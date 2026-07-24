@@ -4,7 +4,7 @@ from .xkeyboardconfig import NumericRowStyles
 DIR_DATA = Path("data/")
 
 MARKDOWN_OUT = DIR_DATA.joinpath("numeric-row.md")
-MARKDOWN_TEMPLATE = Path("template.md").read_text()
+MARKDOWN_TEMPLATE = Path("updater/template.md").read_text()
 MARKDOWN_PREFIX = """### AZERTY
 When using Niri with an AZERTY keyboard layout, the default workspace keybinds (or any keybinds using numbers) will not work as intended.
 

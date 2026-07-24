@@ -2,7 +2,7 @@ from subprocess import run, CompletedProcess
 from pathlib import Path
 from re import findall, match, RegexFlag, finditer
 from json import dumps
-from typing import TypedDict, NotRequired
+from typing import TypedDict, NotRequired, Callable
 
 
 UPSTREAM = "https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config.git";
@@ -261,7 +261,12 @@ def getNumericRowStyles(config: XkeyboardConfig, write:bool=True) -> NumericRowS
         language_row_styles[language].add(row_style)
 
     if write:
-        write_json(azerty_numerics, "azerty-numerics")
+        azerty_numerics_write: dict[str,list[str]] = {}
+        get_id: Callable[[NumericRowStyle], str] = lambda data: data["id"]
+        for style in azerty_numerics:
+            azerty_numerics_write[style] = list(map(get_id, azerty_numerics[style]))
+
+        write_json(azerty_numerics_write, "azerty-numerics")
 
         language_row_styles_with_lists: dict[str, list[str]] = {}
         for language in language_row_styles:

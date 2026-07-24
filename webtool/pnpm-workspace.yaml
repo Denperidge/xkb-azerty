@@ -1,0 +1,16 @@
+# Minimum release age
+# https://pnpm.io/settings#minimumreleaseage
+minimumReleaseAge: 4320 # in minutes
+
+# Exotic sources (git repos, tarballs...) allowed only for direct dependencies
+# https://pnpm.io/settings#blockexoticsubdeps
+blockExoticSubdeps: true
+
+# Don't install newer versions if security measures decreased
+# https://pnpm.io/settings#trustpolicy
+trustPolicy: no-downgrade
+
+# Disable hoisting
+# https://pnpm.io/blog/2020/10/17/node-modules-configuration-options-with-pnpm#a-strict-traditional-modules-directory
+hoist: false
+

@@ -1,0 +1,11 @@
+{
+    "$schema": "https://raw.githubusercontent.com/denoland/deno/refs/heads/main/cli/schemas/config-file.v1.json",
+    "permissions": {
+        "default": {
+            "env": true,
+            "sys": ["homedir"],
+            "read": true,
+            "write": [ "dist/" ]
+        }
+    }
+}

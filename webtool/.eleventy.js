@@ -17,7 +17,8 @@ export default function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy({
         "../data/all.min.json": "all.min.json",
         "../data/azerty-all.min.json": "azerty-all.min.json",
-        "../data/keysyms.min.json": "keysyms.min.json"
+        "../data/keysyms.min.json": "keysyms.min.json",
+        "node_modules/mvp.css/mvp.css": "static/mvp.css"
     })
 
     //eleventyConfig.addGlobalData("layouts", data)

@@ -14,16 +14,20 @@ async function init() {
     // Get global data
     azertyAll = await (await fetch("/azerty-all.min.json")).json();
 
-    input.value = await (await fetch(recipe.url)).text();
+    input.value = await (await fetch(getRecipe().url)).text();
     parse(input.value)
 }
 
+function getRecipe() {
+    return JSON.parse(document.getElementById("recipe").value)
+}
+
 // Parser
-async function parse(text) {
+async function parse(text=input.value) {
     const selectedLayout = layout.selectedOptions[0].value;
 
     // Contents of one of the files in _data/recipes/
-    const recipe = JSON.parse(document.getElementById("recipe").value)
+    const recipe = getRecipe();
 
     console.log(selectedLayout)
     console.log(azertyAll[selectedLayout])
@@ -58,7 +62,11 @@ async function parse(text) {
 
 // Run init & add listeners
 input.addEventListener("change", (e) => {
-    parse(input.value);
+    parse();
+});
+
+document.getElementById("parse").addEventListener("click", (e) => {
+    parse()
 });
 
 init();

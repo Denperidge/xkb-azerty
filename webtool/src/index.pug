@@ -6,30 +6,47 @@ pagination:
 ---
 extends /layout.pug
 
+mixin lbl(id, text)
+    section(class=id)
+        label(for=id)
+            h3=text
+
+        if block
+            block
+    
+
 
 block content
     - console.log(recipeId)
     - const recipe = recipes[recipeId]
     main
         h1 Yazi
-        style.
-            textarea {
-                width: 80vw;
-                height: 40vh;
-            }
-
-        select#layout
-            for layout in azertyAll
-                - const label = layout.name ? `${layout.name} (${layout.id})` : layout.id;
-                - const selected = layout.id == "be";
-                option(value=layout.id selected=selected)=label
-        h2 Original
-        textarea#input
-
-        h2 Azerty
-        textarea#output
-
 
         fieldset
-            summary Meow
-            textarea#recipe=JSON.stringify(recipe, undefined, 2)
+            legend
+                h2 Settings
+
+            +lbl("layout", "Keyboard layout")
+                select#layout
+                    for layout in azertyAll
+                        - const lbl = layout.name ? `${layout.name} (${layout.id})` : layout.id;
+                        - const selected = layout.id == "be";
+                        option(value=layout.id selected=selected)=lbl
+
+            +lbl("recipe", "Recipe ")
+                a(href="https://github.com/Denperidge/xkb-azerty/tree/main/webtool/src/_data") (see schema.json & the recipes/ dir in the source code)
+                textarea#recipe=JSON.stringify(recipe, undefined, 2)
+
+        button(id="parse" value="Parse") Parse
+
+        fieldset
+            legend
+                h2 Input/Output
+
+            +lbl("input", "Original")
+                textarea#input
+
+            +lbl("output", "Parsed")
+                textarea#output
+
+

@@ -1,15 +1,14 @@
-from subprocess import run, CompletedProcess
 from pathlib import Path
 from re import findall, match, RegexFlag, finditer
 from json import dumps
 from typing import TypedDict, NotRequired, Callable
-
+from .shared import clone_or_pull_repo
 
 UPSTREAM = "https://gitlab.freedesktop.org/xkeyboard-config/xkeyboard-config.git";
-DIR_XKEYBOARD_CONFIG = Path("xkeyboard-config")
+DIR_XKEYBOARD_CONFIG = Path("vendor/xkeyboard-config");
 DIR_XKEYBOARD_CONFIG_SYMBOLS = DIR_XKEYBOARD_CONFIG.joinpath("symbols/")
-DIR_DATA = Path("data/")
-#REGEX_SYMBOLS_ENTRY = r'(?P<default>default)?.*?$\n^xkb_symbols.*?"(?P<id>.*?)".*? *{$(?P<content>(\n|.)*?)^ *?};$'
+DIR_DATA_OUT = Path("data/")
+
 REGEX_SYMBOLS_ENTRY = r'(?P<default>default)?.*?($\n^)?xkb_symbols.*?"(?P<id>.*?)".*?( |\n)*?{$(?P<content>(\n|.)*?)^ *?};$'
 REGEX_SYMBOLS_ENTRY_ONE_LINE = r'(?P<default>default)?.*?($\n^)?xkb_symbols.*?"(?P<id>.*?)".*?{(?P<content>.*?) *?};$'
 REGEX_ENTRY_INCLUDES = r'include "(?P<include>.*?)"'
@@ -41,16 +40,9 @@ AZERTY_DETECTORS = {
     #"AD03": "e"  TODO: needed?
 }
 
-
-def clone_or_pull_repo(repo: str=UPSTREAM, dirname: Path=DIR_XKEYBOARD_CONFIG) -> CompletedProcess[bytes]:
-    if not dirname.exists():
-        return run(["git", "clone", repo])
-    else:
-        return run(["git", "pull"], cwd=dirname)
-
 def write_json(to_write: object, filename: str):
-    _ = DIR_DATA.joinpath(f"{filename}.min.json").write_text(dumps(to_write))
-    _ = DIR_DATA.joinpath(f"{filename}.json").write_text(dumps(to_write, indent=4))
+    _ = DIR_DATA_OUT.joinpath(f"{filename}.min.json").write_text(dumps(to_write))
+    _ = DIR_DATA_OUT.joinpath(f"{filename}.json").write_text(dumps(to_write, indent=4))
             
 
 # { layout_id: file_content  }
@@ -108,7 +100,7 @@ def parseXkeyboardConfig(save: bool=True) -> XkeyboardConfig:
         - Clone xkeyboard-config if dir doesn't exist
         - Otherwise, pull changes from upstream
     """
-    _ = clone_or_pull_repo()
+    _ = clone_or_pull_repo(UPSTREAM, DIR_XKEYBOARD_CONFIG)
     
 
     """Step 1:

@@ -24,11 +24,12 @@ function generateNav(array, id, title, hrefFunc=(val)=>val, textFunc=(val)=>val)
 
 
 export default function (eleventyConfig) {
+    eleventyConfig.addGlobalData("base_url", "https://xkb.denperidge.com")
+
     eleventyConfig.addPlugin(pugPlugin);
     eleventyConfig.addPlugin(eleventyAutoCacheBuster);
 
     const datafiles = readdirSync("../data/");
-    const recipes = readdirSync("./src/_data/recipes/");
 
     eleventyConfig.addGlobalData("datafiles", datafiles);
 
@@ -37,14 +38,13 @@ export default function (eleventyConfig) {
         readFileSync("../README.md", {encoding: "utf-8"}),
         {
             layout: "layout.pug",
+            title: "Home",
+            description: "A collection of data & config file converters for Azerty users in XKB"
         }
     )
 
     eleventyConfig.addPassthroughCopy("src/static/");
     eleventyConfig.addPassthroughCopy({
-        "../data/all.min.json": "all.min.json",
-        "../data/azerty-all.min.json": "azerty-all.min.json",
-        "../data/keysyms.min.json": "keysyms.min.json",
         "node_modules/wingcss/dist/wing.min.css": "static/wing.min.css",
         "../data/": "data",
         "../LICENSE": "LICENSE"

@@ -5,6 +5,8 @@ pagination:
     alias: recipeId
 eleventyComputed:
     permalink: "|!{recipeId}/index.html"
+    title: recipeId.name
+    description: "Keyboard layout converter for |!{recipeId}"
 ---
 extends /layout.pug
 

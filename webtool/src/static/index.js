@@ -6,13 +6,13 @@ const layout = document.getElementById("layout");
 const REGEX_SURROUNDING_DBLQUOTES = /(^"|"$)/g;
 
 // Files that will be fetched & need caching
-let azertyAll;  // azerty-all.json
+let allLayouts;  // all.min.json
 let keysyms;  // keysyms.json, only fetched if recipe with mode: unicode
 
 // Initialiazing, only run once
 async function init() {
     // Get global data
-    azertyAll = await (await fetch("/azerty-all.min.json")).json();
+    allLayouts = await (await fetch("/data/all.min.json")).json();
 
     input.value = await (await fetch(getRecipe().url)).text();
     parse(input.value)
@@ -30,19 +30,19 @@ async function parse(text=input.value) {
     const recipe = getRecipe();
 
     console.log(selectedLayout)
-    console.log(azertyAll[selectedLayout])
+    console.log(allLayouts[selectedLayout])
 
     const replace = recipe.replace;
     for (const needle of Object.keys(replace)) {
         const locationCode = replace[needle];
 
-        let newKey = azertyAll[selectedLayout].keys[locationCode][0]
+        let newKey = allLayouts[selectedLayout].keys[locationCode][0]
         console.log("xkb value: " + newKey)
         if (recipe.mode == "xkb") {
             // No further actions
         } else if (recipe.mode == "unicode") {
             if (keysyms == undefined) {
-                keysyms = await (await fetch("/keysyms.min.json")).json();
+                keysyms = await (await fetch("/data/keysyms.min.json")).json();
             }
 
             newKey = JSON.stringify(keysyms[newKey])

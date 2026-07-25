@@ -1,0 +1,33 @@
+main {
+    text-align: center;
+}
+
+fieldset {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+select {
+    margin: auto;
+    text-align: center;
+}
+
+fieldset section {
+    display: initial;
+    flex-grow: 1;
+    min-width: 400px;
+}
+
+textarea {
+    margin: auto;
+    height: 40vh;
+    border: 1px groove #545454;
+}
+
+legend h2 {
+    margin-bottom: 0;
+}
+
+

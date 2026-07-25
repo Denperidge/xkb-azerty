@@ -3,9 +3,9 @@ permalink: data/index.html
 layout: layout.pug
 ---
 
-h1 xkb-azerty data files
+h1#title xkb-azerty data files
 
-nav
+nav(aria-labelledby="title")
     ul
         for file in datafiles
             a(href=file)

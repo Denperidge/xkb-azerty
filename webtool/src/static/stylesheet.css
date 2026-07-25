@@ -1,33 +1,29 @@
 main {
-    text-align: center;
+    width: 95%;
+    margin: auto;
 }
 
-fieldset {
+header nav ul {
     display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 10px;
+    justify-content: space-around;
 }
 
-select {
-    margin: auto;
-    text-align: center;
-}
-
-fieldset section {
-    display: initial;
-    flex-grow: 1;
-    min-width: 400px;
-}
-
-textarea {
-    margin: auto;
-    height: 40vh;
-    border: 1px groove #545454;
-}
-
-legend h2 {
+/*nav {
     margin-bottom: 0;
+    justify-content: space-around;
 }
 
+nav ul li {
+    margin: 0 3rem;
+}
 
+header, main {
+    padding: 1rem;
+}
+
+hr {
+    margin: 2rem 0;
+    border: 1px groove black;
+}
+
+*/

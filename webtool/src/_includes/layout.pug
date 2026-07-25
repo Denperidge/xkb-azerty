@@ -14,25 +14,21 @@ html(lang="en")
         meta(property="og:site_name" content=title)
 
         //-link(rel="stylesheet" href="/static/mvp.css")
+        link(link rel="stylesheet" href="https://unpkg.com/wingcss")
+        link(rel="stylesheet" href="/static/stylesheet.css")
         
         block head
     body 
         header
-            nav(aria-labelledby="recipes")
-                h2#recipes Recipes
+            nav
                 ul
+                    a(href="/")
+                        li Home
+                    a(href="/data")
+                        li Data files
                     for recipe, recipeId in recipes
                         a(href=`/${recipeId}`)
                             li=recipe.name
-
-            if page.url == "/"
-                nav(aria-labelledby="datafiles").datafiles
-                    h2#datafiles Data files
-                    ul
-                        for filename in datafiles
-                            a(href=`/data/${filename}`)
-                                li=filename.replace(/.min.json/, "")
-
 
         block content
             main

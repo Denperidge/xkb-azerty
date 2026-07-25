@@ -34,23 +34,7 @@ export default function (eleventyConfig) {
 
     eleventyConfig.addTemplate(
         "index.md",
-        readFileSync("../README.md", {encoding: "utf-8"})
-            .replace("## Explanation", `
-                ${generateNav(
-                    recipes,
-                    "recipes",
-                    "Recipes",
-                    (filename) => filename.replace(".json", ""),
-                    (filename) => filename.replace(".json", "")
-                )}
-                ${generateNav(
-                    datafiles,
-                    "datafiles",
-                    "Data files",
-                    (filename) => "data/" + filename,
-                    (filename) => filename.replace(/(\.min|)\.json/, "")
-                )}
-                 <h2>Explanation</h2>`),
+        readFileSync("../README.md", {encoding: "utf-8"}),
         {
             layout: "layout.pug",
         }

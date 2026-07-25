@@ -5,7 +5,7 @@ pagination:
     alias: recipeId
 eleventyComputed:
     permalink: "|!{recipeId}/index.html"
-    title: recipeId.name
+    title: "|!{recipes[recipeId].name}"
     description: "Keyboard layout converter for |!{recipeId}"
 ---
 extends /layout.pug
@@ -37,7 +37,7 @@ block content
 
             +lbl("layout", "Keyboard layout")
                 select#layout
-                    for layout in azertyAll
+                    for layout in allLayouts
                         - const lbl = layout.name ? `${layout.name} (${layout.id})` : layout.id;
                         - const selected = layout.id == "be";
                         option(value=layout.id selected=selected)=lbl

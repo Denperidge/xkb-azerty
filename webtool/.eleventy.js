@@ -9,22 +9,48 @@ export const config = {
     }
 };
 
+function generateNav(array, id, title, hrefFunc=(val)=>val, textFunc=(val)=>val) {
+    const nav = array.map(value => {
+        return `<a href="${hrefFunc(value)}"><li>${textFunc(value)}</li></a>`;
+    }).join("\n")
+    return `<nav aria-labelledby="${id}">
+    <h2 id="${id}">${title}</h2>
+    <ul>
+        ${nav}
+    </ul>
+</nav>
+`
+}
+
 
 export default function (eleventyConfig) {
     eleventyConfig.addPlugin(pugPlugin);
     eleventyConfig.addPlugin(eleventyAutoCacheBuster);
 
+    const datafiles = readdirSync("../data/");
+    const recipes = readdirSync("./src/_data/recipes/");
+
+    eleventyConfig.addGlobalData("datafiles", datafiles);
+
     eleventyConfig.addTemplate(
         "index.md",
         readFileSync("../README.md", {encoding: "utf-8"})
-            .replace("## Explanation", `<nav>
-                    <ul>
-                        <a href=""><li></li></a>
-                    </ul>
-                </nav>
-
-
-                <h2>Explanation</h2>`),
+            .replace("## Explanation", `
+                ${generateNav(
+                    recipes,
+                    "recipes",
+                    "Recipes",
+                    (filename) => filename.replace(".json", ""),
+                    (filename) => filename.replace(".json", "")
+                )}
+                ${generateNav(
+                    datafiles,
+                    "datafiles",
+                    "Data files",
+                    (filename) => "data/" + filename,
+                    (filename) => filename.replace(/(\.min|)\.json/, "")
+                )}
+                 <h2>Explanation</h2>`),
         {
             layout: "layout.pug",
         }
@@ -40,5 +66,4 @@ export default function (eleventyConfig) {
         "../LICENSE": "LICENSE"
     })
 
-    eleventyConfig.addGlobalData("datafiles", readdirSync("../data/"))
 }

@@ -45,7 +45,7 @@ export default function (eleventyConfig) {
         "../data/all.min.json": "all.min.json",
         "../data/azerty-all.min.json": "azerty-all.min.json",
         "../data/keysyms.min.json": "keysyms.min.json",
-        "node_modules/mvp.css/mvp.css": "static/mvp.css",
+        "node_modules/wingcss/dist/wing.min.css": "static/wing.min.css",
         "../data/": "data",
         "../LICENSE": "LICENSE"
     })

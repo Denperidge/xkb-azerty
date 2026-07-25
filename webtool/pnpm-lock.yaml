@@ -17,9 +17,9 @@ importers:
       eleventy-auto-cache-buster:
         specifier: ^0.8.4
         version: 0.8.4
-      mvp.css:
-        specifier: ^1.17.3
-        version: 1.17.3
+      wingcss:
+        specifier: 1.0.0-beta
+        version: 1.0.0-beta
 
 packages:
 
@@ -526,9 +526,6 @@ packages:
   ms@2.1.3:
     resolution: {integrity: sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA==}
 
-  mvp.css@1.17.3:
-    resolution: {integrity: sha512-0ZRdhkLezTig91Firbm0igq3OzmZ987jH1Nsr6Dq6cPs9i5mDeGpD8VBkPvF6lG3AEWoCyVoRNChYU+cNptgIg==}
-
   node-retrieve-globals@6.0.1:
     resolution: {integrity: sha512-j0DeFuZ/Wg3VlklfbxUgZF/mdHMTEiEipBb3q0SpMMbHaV3AVfoUQF8UGxh1s/yjqO0TgRZd4Pi/x2yRqoQ4Eg==}
 
@@ -730,6 +727,9 @@ packages:
   void-elements@3.1.0:
     resolution: {integrity: sha512-Dhxzh5HZuiHQhbvTW9AMetFfBHDMYpo23Uo9btPXgdYP+3T5S+p+jgNy7spra+veYhBP2dCSgxR/i2Y02h5/6w==}
     engines: {node: '>=0.10.0'}
+
+  wingcss@1.0.0-beta:
+    resolution: {integrity: sha512-yGfa9ik9qTLgr6vaNA2WA2h4HUEuN8fIflVhSllWPNG4mIyQaDk8O5ZqY1l9Q5mPC2HrngfKVSIAw+kKSHzSmw==}
 
   with@7.0.2:
     resolution: {integrity: sha512-RNGKj82nUPg3g5ygxkQl0R937xLyho1J24ItRCBTr/m1YnZkzJy1hUiHUJrc/VlsDQzsCnInEGSg3bci0Lmd4w==}
@@ -1274,8 +1274,6 @@ snapshots:
 
   ms@2.1.3: {}
 
-  mvp.css@1.17.3: {}
-
   node-retrieve-globals@6.0.1:
     dependencies:
       acorn: 8.17.0
@@ -1485,6 +1483,8 @@ snapshots:
   urlpattern-polyfill@10.1.0: {}
 
   void-elements@3.1.0: {}
+
+  wingcss@1.0.0-beta: {}
 
   with@7.0.2:
     dependencies:

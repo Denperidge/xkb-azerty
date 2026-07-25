@@ -8,20 +8,23 @@ eleventyComputed:
 ---
 extends /layout.pug
 
-mixin lbl(id, text)
+mixin lbl(id, text, details=false)
     section(class=id)
-        label(for=id)
-            h3=text
-
-        if block
-            block
-    
-
+        if !details
+            label(for=id)
+                h3=text
+            if block
+                block
+        else
+            details
+                summary
+                    h3=text
+                if block
+                    block
 
 block content
 
     link(rel="stylesheet" href="/static/recipe.css")
-    - console.log(recipeId)
     - const recipe = recipes[recipeId]
     main
         h1 Yazi
@@ -37,7 +40,7 @@ block content
                         - const selected = layout.id == "be";
                         option(value=layout.id selected=selected)=lbl
 
-            +lbl("recipe", "Recipe ")
+            +lbl("recipe", "Recipe ", true)
                 a(href="https://github.com/Denperidge/xkb-azerty/tree/main/webtool/src/_data") (see schema.json & the recipes/ dir in the source code)
                 textarea#recipe=JSON.stringify(recipe, undefined, 2)
 

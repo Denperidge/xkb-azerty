@@ -14,3 +14,5 @@ trustPolicy: no-downgrade
 # https://pnpm.io/blog/2020/10/17/node-modules-configuration-options-with-pnpm#a-strict-traditional-modules-directory
 hoist: false
 
+overrides:
+  "brace-expansion@1.1.16": "^5.0.8"

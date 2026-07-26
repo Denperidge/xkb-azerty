@@ -1,7 +1,7 @@
 # xkb-azerty
 
-A webtool ([deployment](https://xkb.denperidge.com), [source code](https://github.com/Denperidge/xkb-azerty/tree/main/webtool)) and collection of [JSON data](data/) about XKB,
-made for people who don't use the "default" keyboard layout (US/QWERTY).
+Config file converters ([deployment](https://xkb.denperidge.com/recipes/), [source code](https://github.com/Denperidge/xkb-azerty/tree/main/webtool)) and a collection of [JSON data](data/)
+for non-US/QWERTY users in XKB.
 
 The webtoot translates dynamically fetched config files to any keyboard layout
 with the help of a simple [recipe system](https://github.com/Denperidge/xkb-azerty/tree/main/webtool/src/_data/recipes).

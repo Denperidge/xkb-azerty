@@ -1,0 +1,18 @@
+body {
+    font-size: 18px;
+}
+
+main {
+    width: 95%;
+    margin: auto;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: space-around;
+}
+
+body hr:last-of-type {
+    margin-top: 8rem;
+    
+}

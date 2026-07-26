@@ -1,6 +1,7 @@
 import pugPlugin from "@11ty/eleventy-plugin-pug";
 import eleventyAutoCacheBuster from "eleventy-auto-cache-buster";
 import { readFileSync, readdirSync } from "node:fs";
+import allLayouts from "../data/all.json" with {type: "json"};
 
 export const config = {
     dir: {
@@ -8,20 +9,6 @@ export const config = {
         output: "dist"
     }
 };
-
-function generateNav(array, id, title, hrefFunc=(val)=>val, textFunc=(val)=>val) {
-    const nav = array.map(value => {
-        return `<a href="${hrefFunc(value)}"><li>${textFunc(value)}</li></a>`;
-    }).join("\n")
-    return `<nav aria-labelledby="${id}">
-    <h2 id="${id}">${title}</h2>
-    <ul>
-        ${nav}
-    </ul>
-</nav>
-`
-}
-
 
 export default function (eleventyConfig) {
     eleventyConfig.addGlobalData("base_url", "https://xkb.denperidge.com")
@@ -32,6 +19,7 @@ export default function (eleventyConfig) {
     const datafiles = readdirSync("../data/");
 
     eleventyConfig.addGlobalData("datafiles", datafiles);
+    eleventyConfig.addGlobalData("allLayouts", allLayouts);
 
     eleventyConfig.addTemplate(
         "index.md",

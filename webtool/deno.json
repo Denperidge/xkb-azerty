@@ -5,7 +5,7 @@
             "env": true,
             "sys": ["homedir"],
             "read": true,
-            "write": [ "dist/" ]
+            "write": [ "../docs/" ]
         }
     }
 }

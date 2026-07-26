@@ -44,7 +44,7 @@ cd xkb-azerty/webtool/
 
 pnpm start
 
-# Done! See the result in dist/
+# Done! See the result in ../docs/
 ```
 
 ### Use the updater (generate data/ directory)

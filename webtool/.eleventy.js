@@ -6,7 +6,7 @@ import allLayouts from "../data/all.json" with {type: "json"};
 export const config = {
     dir: {
         input: "src",
-        output: "dist"
+        output: "../docs"
     }
 };
 

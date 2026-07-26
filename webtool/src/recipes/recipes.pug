@@ -1,0 +1,16 @@
+---
+layout: layout.pug
+title: "Recipes"
+description: "Keyboard layout converters"
+permalink: "/recipes/index.html"
+---
+
+h1 xkb-azerty
+
+nav(aria-labelledby="recipes")
+    h2#recipes Recipes
+    ul
+      for recipe, recipeId in recipes
+            a(href=`/recipes/${recipeId}`)
+                li=recipe.name
+

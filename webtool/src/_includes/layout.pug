@@ -23,16 +23,16 @@ html(lang="en")
                         li Home
                     a(href="/data")
                         li Data files
-                    for recipe, recipeId in recipes
-                        a(href=`/${recipeId}`)
-                            li=recipe.name
+                    a(href="/recipes")
+                        li Recipes
 
         block content
             main
                 | !{content}
 
+        hr
         footer
-            <a href="https://github.com/denperidge/xkb-azerty">Source code</a>
+            a(href="https://github.com/denperidge/xkb-azerty") Source code
 
         script(src="/static/index.js")
 

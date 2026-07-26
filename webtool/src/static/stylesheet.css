@@ -12,22 +12,7 @@ header nav ul {
     justify-content: space-around;
 }
 
-/*nav {
-    margin-bottom: 0;
-    justify-content: space-around;
+body hr:last-of-type {
+    margin-top: 8rem;
+    
 }
-
-nav ul li {
-    margin: 0 3rem;
-}
-
-header, main {
-    padding: 1rem;
-}
-
-hr {
-    margin: 2rem 0;
-    border: 1px groove black;
-}
-
-*/

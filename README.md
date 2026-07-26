@@ -1,9 +1,10 @@
 # xkb-azerty
 
-A collection of [JSON data](data/) about XKB & Azerty keyboards.
+A webtool ([deployment](https://xkb.denperidge.com), [source code](https://github.com/Denperidge/xkb-azerty/tree/main/webtool)) and collection of [JSON data](data/) about XKB,
+made for people who don't use the "default" keyboard layout (US/QWERTY).
 
-This includes a [webtool](https://github.com/Denperidge/xkb-azerty/tree/main/webtool)
-which translates dynamically fetched config files to any keyboard layout with the help of a simple [recipe system](https://github.com/Denperidge/xkb-azerty/tree/main/webtool/src/_data/recipes).
+The webtoot translates dynamically fetched config files to any keyboard layout
+with the help of a simple [recipe system](https://github.com/Denperidge/xkb-azerty/tree/main/webtool/src/_data/recipes).
 
 ---
 
@@ -28,19 +29,11 @@ The scripts in this repository do *not* rely on an existing X11 installation; in
 ---
 
 ## How-to
-### Use the updater (generate data/ directory)
-Requirements: `python3`, `git`
+### Use the webtool
+Requirements: any web browser
 
-```sh
-git clone https://github.com/Denperidge/xkb-azerty.git
-cd xkb-azerty/
-
-# Depending on your OS/configuration, python3 or py -3 must be used
-python -m updater
-
-# Done!
-```
-
+Simply navigate to your [desired recipe page on the deployment](https://xkb.denperidge.com/recipes/),
+select your layout and press parse.
 
 ### Build the webtool
 Requirements: `Node.js`, `corepack or pnpm`, `git`
@@ -52,6 +45,19 @@ cd xkb-azerty/webtool/
 pnpm start
 
 # Done! See the result in dist/
+```
+
+### Use the updater (generate data/ directory)
+Requirements: `python3`, `git`
+
+```sh
+git clone https://github.com/Denperidge/xkb-azerty.git
+cd xkb-azerty/
+
+# Depending on your OS/configuration, python3 or py -3 must be used
+python -m updater
+
+# Done!
 ```
 
 ## License

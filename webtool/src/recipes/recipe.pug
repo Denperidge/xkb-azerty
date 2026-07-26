@@ -4,7 +4,7 @@ pagination:
     size: 1
     alias: recipeId
 eleventyComputed:
-    permalink: "|!{recipeId}/index.html"
+    permalink: "|/recipes/!{recipeId}/index.html"
     title: "|!{recipes[recipeId].name}"
     description: "Keyboard layout converter for |!{recipeId}"
 ---

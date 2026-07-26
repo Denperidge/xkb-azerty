@@ -1,0 +1,18 @@
+{
+    "$schema": "../schema.json",
+    "name": "Niri numeric row (tag: v26.04)",
+    "url": "https://raw.githubusercontent.com/niri-wm/niri/refs/tags/v26.04/resources/default-config.kdl",
+    "mode": "xkb",
+    "outputTemplate": "+${KEY}",
+    "replace": {
+        "(?<=(Mod|Ctrl))\\+1": "AE01",
+        "(?<=(Mod|Ctrl))\\+2": "AE02",
+        "(?<=(Mod|Ctrl))\\+3": "AE03",
+        "(?<=(Mod|Ctrl))\\+4": "AE04",
+        "(?<=(Mod|Ctrl))\\+5": "AE05",
+        "(?<=(Mod|Ctrl))\\+6": "AE06",
+        "(?<=(Mod|Ctrl))\\+7": "AE07",
+        "(?<=(Mod|Ctrl))\\+8": "AE08",
+        "(?<=(Mod|Ctrl))\\+9": "AE09"
+    }
+}

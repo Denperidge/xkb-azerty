@@ -54,7 +54,10 @@ async function parse(text=input.value) {
             newKey = recipe.outputTemplate.replace("${KEY}", newKey)
         }
 
-        text = text.replace(needle, newKey)
+        console.log(needle)
+        console.log(new RegExp(needle, "m").exec(text))
+
+        text = text.replaceAll(new RegExp(needle, "gm"), newKey)
     }   
 
     output.value = text;

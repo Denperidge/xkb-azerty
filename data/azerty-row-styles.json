@@ -15,10 +15,10 @@
         "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla"
     ],
     "fr": [
+        "1,2,3,4,5,6,7,8,9",
         "U201E,U2116,percent,parenleft,colon,semicolon,question,U2116,degree",
         "agrave,eacute,egrave,ecircumflex,parenleft,parenright,leftsinglequotemark,rightsinglequotemark,guillemotleft",
         "ampersand,eacute,quotedbl,apostrophe,parenleft,minus,egrave,underscore,ccedilla",
-        "1,2,3,4,5,6,7,8,9",
         "ampersand,eacute,quotedbl,apostrophe,parenleft,section,egrave,exclam,ccedilla"
     ],
     "cm": [

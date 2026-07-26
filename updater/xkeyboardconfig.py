@@ -256,6 +256,7 @@ def getNumericRowStyles(config: XkeyboardConfig, write:bool=True) -> NumericRowS
         language_row_styles_with_lists: dict[str, list[str]] = {}
         for language in language_row_styles:
             language_row_styles_with_lists[language] = list(language_row_styles[language])
+            language_row_styles_with_lists[language].sort()
 
         write_json(language_row_styles_with_lists, "azerty-row-styles")
 
